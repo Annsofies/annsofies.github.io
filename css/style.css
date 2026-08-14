@@ -1,0 +1,1826 @@
+/* ==================================================
+   FARVER
+================================================== */
+
+:root {
+  --grey: #f0f0f0;
+  --dark: #2b2b2b;
+  --pink: #ff72c0;
+  --light-pink: #ffbde2;
+}
+
+/* ==================================================
+   RESET
+================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--grey);
+  color: var(--dark);
+
+  font-family: "Helvetica Neue", Arial, sans-serif;
+
+  font-weight: 400;
+
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* ==================================================
+   NAVBAR
+================================================== */
+
+.navbar {
+  position: sticky;
+  top: 0;
+
+  z-index: 1000;
+
+  height: 82px;
+
+  padding: 0 5.5%;
+
+  background-color: var(--grey);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/* Logo */
+
+.logo-container {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+}
+
+.logo-container img {
+  width: 67px;
+
+  height: auto;
+}
+
+.logo-container span {
+  font-size: 17px;
+
+  font-weight: 700;
+}
+
+/* Navigation */
+
+.nav-menu {
+  display: flex;
+
+  align-items: center;
+
+  gap: 31px;
+}
+
+.nav-link {
+  border: none;
+
+  background: transparent;
+
+  color: var(--dark);
+
+  font-size: 16px;
+
+  font-weight: 400;
+
+  padding: 3px 8px;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+/* Hover */
+
+.nav-link:hover {
+  background-color: var(--pink);
+
+  color: white;
+}
+
+/* Aktiv side */
+
+.nav-link.active {
+  background-color: var(--pink);
+
+  color: white;
+
+  font-weight: 700;
+}
+
+/* ==================================================
+   KONTAKTBOKS
+================================================== */
+
+.contact-box {
+  position: absolute;
+
+  top: 82px;
+
+  right: 5.5%;
+
+  width: 450px;
+
+  min-height: 74px;
+
+  padding: 14px 20px;
+
+  background-color: var(--pink);
+
+  color: white;
+
+  display: none;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+.contact-box.show {
+  display: flex;
+}
+
+.contact-box > a {
+  font-size: 16px;
+}
+
+.contact-icons {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.contact-icons a {
+  width: 36px;
+
+  height: 36px;
+
+  background-color: white;
+
+  color: var(--dark);
+
+  border-radius: 5px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.close-contact {
+  background: transparent;
+
+  border: none;
+
+  color: white;
+
+  font-size: 27px;
+
+  cursor: pointer;
+
+  line-height: 1;
+}
+
+/* ==================================================
+   HERO
+================================================== */
+
+.hero {
+  position: relative;
+  min-height: 600px;
+  background-color: #f0f0f0;
+  margin: 0;
+}
+
+.hero-content {
+  padding-left: 5.5%;
+  padding-top: 85px;
+}
+
+/* HELLO */
+
+.hero-title {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.hero-thin {
+  font-size: clamp(65px, 7vw, 115px);
+
+  line-height: 0.95;
+
+  font-weight: 300;
+
+  letter-spacing: -4px;
+}
+
+.hero-bold {
+  margin-top: 8px;
+
+  font-size: clamp(65px, 7vw, 115px);
+
+  line-height: 0.95;
+
+  font-weight: 700;
+
+  letter-spacing: -3px;
+}
+
+/* Tekst under overskriften */
+
+.hero-info {
+  margin-top: 50px;
+}
+
+.hero-info p:first-child {
+  font-size: 14px;
+
+  margin-bottom: 3px;
+}
+
+.hero-info p:last-child {
+  font-size: 13px;
+}
+
+/* ==================================================
+   ORGANISK OVERGANG
+================================================== */
+
+.hero-wave {
+  width: 100%;
+  line-height: 0;
+  margin-top: -200px;
+  padding: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-wave img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ==================================================
+   INTRO
+================================================== */
+
+.projects-intro {
+  background-color: white;
+
+  text-align: center;
+
+  padding: 70px 20px 60px;
+}
+
+.projects-intro h2 {
+  font-size: clamp(27px, 3vw, 42px);
+
+  line-height: 1.18;
+
+  font-weight: 700;
+}
+
+.projects-intro h2 span {
+  color: var(--pink);
+}
+
+/* ==================================================
+   GENEREL PROJEKT
+================================================== */
+
+.project {
+  background-color: white;
+
+  width: 100%;
+  max-width: none;
+
+  margin: 0;
+
+  padding: 50px 8% 110px;
+
+  display: grid;
+
+  grid-template-columns: 50% 50%;
+
+  align-items: center;
+
+  gap: 35px;
+}
+
+/* Projekttekst */
+
+.project-content {
+  position: relative;
+  max-width: 440px;
+}
+
+.project-label {
+  display: inline-block;
+
+  background-color: var(--light-pink);
+
+  color: white;
+
+  padding: 9px 15px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  margin-bottom: 0;
+
+  position: relative;
+
+  left: auto;
+}
+
+.project h3 {
+  display: inline-block;
+
+  background-color: var(--pink);
+
+  color: white;
+
+  padding: 9px 15px;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  margin-bottom: 28px;
+}
+
+.project p {
+  font-size: 13px;
+  line-height: 1.55;
+  margin-bottom: 22px;
+}
+
+/* ==================================================
+   CHARACTER DESIGN
+================================================== */
+
+.project-character {
+  padding-top: 15px;
+}
+
+.character-images {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0px;
+  width: 100%;
+}
+
+.character-main {
+  width: 48%;
+}
+
+.character-second {
+  width: 57%;
+  margin-left: 0px;
+  margin-right: 19px;
+}
+
+/* ==================================================
+   STORCENTER NORD
+================================================== */
+
+.project-nord {
+  padding-top: 30px;
+}
+
+.nord-images {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 0;
+}
+
+.nord-images img {
+  width: 50%;
+
+  height: auto;
+
+  object-fit: contain;
+}
+
+/* ==================================================
+   OVARTACI
+================================================== */
+
+.project-ovartaci {
+  padding-top: 45px;
+
+  padding-bottom: 130px;
+}
+
+.ovartaci-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ovartaci-image img {
+  width: 65%;
+  max-width: 360px;
+  height: auto;
+}
+
+/* ==================================================
+   VIL DU SE MERE
+================================================== */
+
+.more {
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    #ffffff 18%,
+    #f8f8f8 45%,
+    #f0f0f0 100%
+  );
+
+  text-align: center;
+
+  padding: 100px 20px 110px;
+}
+
+.more h2 {
+  font-size: clamp(38px, 4vw, 52px);
+
+  font-weight: 700;
+
+  margin-bottom: 38px;
+}
+
+.more h2 span {
+  color: var(--pink);
+}
+
+/* Knapper */
+
+.more-buttons {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 12px;
+}
+
+.more-buttons a {
+  width: 210px;
+
+  padding: 17px 25px;
+
+  background-color: var(--pink);
+
+  color: white;
+
+  border-radius: 30px;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  transition: 0.2s ease;
+}
+
+.more-buttons a:hover {
+  background-color: var(--dark);
+
+  transform: translateY(-2px);
+}
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+.footer {
+  min-height: 520px;
+
+  position: relative;
+
+  background-color: var(--light-pink);
+
+  padding: 45px 2% 25px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  border-top: none;
+}
+
+.footer h2 {
+  font-size: clamp(60px, 8vw, 115px);
+
+  line-height: 0.9;
+
+  font-weight: 700;
+
+  color: var(--pink);
+
+  letter-spacing: -4px;
+}
+
+.footer-info {
+  margin-top: 40px;
+}
+
+.footer-info p {
+  font-size: 14px;
+
+  line-height: 1.3;
+}
+
+.footer-contact {
+  margin-top: 35px;
+}
+
+.footer-contact > p {
+  font-size: 15px;
+
+  margin-bottom: 9px;
+}
+
+.footer-icons {
+  display: flex;
+
+  gap: 8px;
+}
+
+.footer-icons a {
+  width: 24px;
+
+  height: 24px;
+
+  border-radius: 4px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background-color: var(--pink);
+
+  color: white;
+
+  font-size: 13px;
+
+  transition: 0.2s ease;
+}
+
+.footer-icons a:hover {
+  transform: translateY(-3px);
+
+  background-color: var(--dark);
+}
+
+.copyright {
+  margin-top: auto;
+
+  text-align: center;
+
+  font-size: 9px;
+}
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 800px) {
+  .navbar {
+    padding: 0 4%;
+  }
+
+  .logo-container span {
+    display: none;
+  }
+
+  .nav-menu {
+    gap: 8px;
+  }
+
+  .nav-link {
+    font-size: 13px;
+  }
+
+  .hero-content {
+    padding-left: 5%;
+  }
+
+  .project {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+
+    padding-left: 7%;
+
+    padding-right: 7%;
+  }
+
+  .project-nord .project-content {
+    order: 1;
+  }
+
+  .nord-images {
+    order: 2;
+  }
+
+  .character-images {
+    max-width: 600px;
+
+    margin: 0 auto;
+  }
+
+  .ovartaci-image {
+    justify-content: center;
+  }
+
+  .ovartaci-image img {
+    width: 40%;
+  }
+}
+
+/* ==================================================
+   MOBIL
+================================================== */
+
+@media (max-width: 550px) {
+  .navbar {
+    height: 70px;
+  }
+
+  .logo-container img {
+    width: 55px;
+  }
+
+  .nav-menu {
+    gap: 3px;
+  }
+
+  .nav-link {
+    font-size: 11px;
+
+    padding: 4px 5px;
+  }
+
+  .contact-box {
+    top: 70px;
+
+    left: 5%;
+
+    right: 5%;
+
+    width: 90%;
+  }
+
+  .hero {
+    min-height: 470px;
+  }
+
+  .hero-content {
+    padding-top: 70px;
+  }
+
+  .hero-thin,
+  .hero-bold {
+    font-size: 57px;
+
+    letter-spacing: -2px;
+  }
+
+  .hero-info {
+    margin-top: 35px;
+  }
+
+  .hero-info p:last-child {
+    max-width: 320px;
+  }
+
+  .projects {
+    background-color: white;
+    margin: 0;
+    padding: 0 8% 110px;
+  }
+
+  .project {
+    padding-top: 20px;
+
+    padding-bottom: 80px;
+  }
+
+  .character-images {
+    flex-direction: column;
+  }
+
+  .character-main,
+  .character-second {
+    width: 70%;
+  }
+
+  .nord-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .nord-images img {
+    width: 50%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .ovartaci-image img {
+    width: 60%;
+  }
+
+  .more-buttons {
+    flex-direction: column;
+
+    align-items: center;
+  }
+
+  .footer {
+    min-height: 400px;
+  }
+
+  .footer h2 {
+    font-size: 48px;
+  }
+}
+
+/* ==================================================
+   KLIKBARE PROJEKTBILLEDER
+================================================== */
+
+.project-images img {
+  cursor: pointer;
+
+  transition: transform 0.2s ease;
+}
+
+.project-images img:hover {
+  transform: scale(1.02);
+}
+
+/* ==================================================
+   IMAGE LIGHTBOX
+================================================== */
+
+.image-lightbox {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 2000;
+
+  background-color: rgba(43, 43, 43, 0.9);
+
+  display: none;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 40px;
+}
+
+.image-lightbox.show {
+  display: flex;
+}
+
+/* Det store billede */
+
+.image-lightbox img {
+  max-width: 90vw;
+
+  max-height: 90vh;
+
+  width: auto;
+
+  height: auto;
+
+  object-fit: contain;
+
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* X */
+
+.lightbox-close {
+  position: absolute;
+
+  top: 25px;
+
+  right: 35px;
+
+  border: none;
+
+  background: transparent;
+
+  color: white;
+
+  font-size: 45px;
+
+  font-weight: 300;
+
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+.lightbox-close:hover {
+  color: var(--pink);
+}
+
+/* ==================================================
+   PORTFOLIO OVERSKRIFT
+================================================== */
+
+.portfolio-hero {
+  background-color: var(--grey);
+
+  padding: 85px 5.5% 70px;
+}
+
+.portfolio-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Stor overskrift */
+
+.portfolio-title h1 {
+  margin: 0;
+
+  font-family: "Helvetica Neue", Arial, sans-serif;
+
+  font-size: clamp(65px, 7vw, 115px);
+
+  line-height: 0.95;
+
+  font-weight: 300;
+
+  letter-spacing: -4px;
+
+  color: var(--dark);
+}
+
+/* Lyserød h2 */
+
+.portfolio-title h2 {
+  margin: 15px 0 0;
+
+  font-family: "Helvetica Neue", Arial, sans-serif;
+
+  font-size: clamp(25px, 3vw, 42px);
+
+  line-height: 1;
+
+  font-weight: 700;
+
+  letter-spacing: -1.5px;
+
+  color: var(--pink);
+}
+
+/* ==================================================
+   PORTFOLIO CAROUSEL
+================================================== */
+
+.portfolio-carousel {
+  background-color: var(--grey);
+
+  width: 100%;
+
+  padding: 20px 0 50px;
+
+  display: flex;
+
+  justify-content: center;
+}
+
+/* CAROUSEL VINDUE */
+
+.carousel-window {
+  position: relative;
+
+  width: 100%;
+
+  max-width: 1400px;
+
+  overflow: hidden;
+
+  padding: 0;
+}
+
+/* SELVE RÆKKEN */
+
+.carousel-track {
+  display: flex;
+
+  align-items: center;
+
+  transition: transform 0.5s ease;
+
+  will-change: transform;
+}
+
+/* ==================================================
+   SLIDES
+================================================== */
+
+.portfolio-card {
+  min-width: 60%;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 30px 15px;
+
+  transform: scale(0.72);
+
+  transition: transform 0.5s ease;
+}
+
+/* MIDTERSTE BILLEDE */
+
+.portfolio-card.active {
+  transform: scale(1);
+}
+
+/* ==================================================
+   BILLEDER
+================================================== */
+
+.portfolio-image {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.portfolio-image img {
+  display: block;
+
+  width: 100%;
+
+  max-width: 820px;
+
+  max-height: 600px;
+
+  height: auto;
+
+  object-fit: contain;
+
+  cursor: pointer;
+}
+
+/* ==================================================
+   PILE
+================================================== */
+
+.carousel-arrow {
+  position: absolute;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  z-index: 30;
+
+  width: 45px;
+
+  height: 45px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background-color: var(--pink);
+
+  color: white;
+
+  font-size: 24px;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+/* HOVER */
+
+.carousel-arrow:hover {
+  background-color: #f42a9a;
+
+  transform: translateY(-50%) scale(1.08);
+}
+
+/* TÆT PÅ MIDTERBILLEDET */
+
+.carousel-prev {
+  left: 20%;
+}
+
+.carousel-next {
+  right: 20%;
+}
+
+/* ==================================================
+   PORTFOLIO MOBIL
+================================================== */
+
+@media (max-width: 800px) {
+  .portfolio-carousel {
+    gap: 10px;
+
+    padding: 50px 3%;
+  }
+
+  .portfolio-card {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+
+    padding: 20px 7%;
+  }
+
+  .portfolio-card-content {
+    max-width: 500px;
+
+    margin: 0 auto;
+
+    text-align: center;
+  }
+
+  .portfolio-category,
+  .portfolio-card h2 {
+    margin-left: auto;
+
+    margin-right: auto;
+  }
+
+  .portfolio-image img {
+    max-width: 500px;
+  }
+
+  .carousel-arrow {
+    width: 40px;
+
+    height: 40px;
+
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 550px) {
+  .portfolio-hero {
+    padding: 70px 5% 50px;
+  }
+
+  .portfolio-title h1 {
+    font-size: 57px;
+    letter-spacing: -2px;
+  }
+
+  .portfolio-title h2 {
+    font-size: 25px;
+    line-height: 1.05;
+  }
+}
+
+.portfolio-carousel {
+  padding: 0px 1% 35px;
+}
+
+.carousel-arrow {
+  width: 35px;
+
+  height: 35px;
+
+  font-size: 18px;
+}
+
+.portfolio-card {
+  padding: 15px 5% 30px;
+}
+
+.portfolio-card h2 {
+  font-size: 18px;
+}
+
+.skills-list {
+  grid-template-columns: 1fr;
+}
+
+/* ==================================================
+   HARD SKILLS
+================================================== */
+
+.hard-skills {
+  position: relative;
+  width: 100%;
+}
+
+/* ------------------------------
+   OVERGANG
+------------------------------ */
+
+.hard-skills-transition {
+  width: 100%;
+  height: 100px;
+
+  line-height: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.hard-skills-transition img {
+  display: block;
+  width: 100%;
+  height: 100px;
+}
+
+/* ------------------------------
+   HVID BOKS
+------------------------------ */
+.hard-skills-box {
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  background-color: white;
+  overflow: visible;
+  z-index: 3;
+}
+
+/* ------------------------------
+   INDHOLD
+------------------------------ */
+
+.hard-skills-content {
+  position: relative;
+
+  width: 84%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding-top: 0px;
+  transform: translateY(-40px);
+  padding-bottom: 100px;
+}
+
+/* ------------------------------
+   OVERSKRIFT
+------------------------------ */
+
+.hard-skills-content h2 {
+  margin: 0;
+
+  font-size: clamp(70px, 9vw, 130px);
+
+  line-height: 0.8;
+
+  letter-spacing: -5px;
+
+  font-weight: 700;
+
+  color: var(--dark);
+}
+
+.hard-skills-content h2 span {
+  color: var(--pink);
+  font-weight: 300;
+}
+
+/* ------------------------------
+   HARD SKILLS BILLEDE
+------------------------------ */
+
+.hardskills-image {
+  display: block;
+
+  width: 500px;
+  max-width: 50%;
+
+  height: auto;
+
+  margin-top: 100px;
+}
+
+/* ------------------------------
+   MIG VIDEO
+------------------------------ */
+
+.mig {
+  position: absolute;
+
+  right: 8%;
+  bottom: 0;
+
+  z-index: 5;
+}
+
+.mig video {
+  display: block;
+
+  width: 408px;
+  height: auto;
+}
+
+/* ==================================================
+   PORTFOLIO KATEGORIER
+================================================== */
+
+.portfolio-categories {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-top: 150px;
+}
+
+.portfolio-category-dark,
+.portfolio-category-light {
+  display: inline-block;
+
+  padding: 12px 20px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  color: white;
+}
+
+/* Mørk pink først */
+
+.portfolio-category-dark {
+  background-color: var(--pink);
+}
+
+/* Lyserød bagefter */
+
+.portfolio-category-light {
+  background-color: var(--light-pink);
+}
+
+/* ==================================================
+   CAROUSEL 2 – FRITID
+================================================== */
+
+.portfolio-carousel-2 {
+  background-color: var(--grey);
+  padding: 0 1% 80px;
+}
+
+/* VINDUE */
+
+.carousel-window-2 {
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  overflow: hidden;
+}
+
+/* RÆKKE */
+
+.carousel-track-2 {
+  display: flex;
+  align-items: center;
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+
+/* KORT */
+
+.portfolio-card-2 {
+  min-width: 60%;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 15px 5% 30px;
+
+  transform: scale(0.72);
+  transition: transform 0.5s ease;
+}
+
+/* MIDTERSTE */
+
+.portfolio-card-2.active {
+  transform: scale(1);
+}
+
+/* BILLEDER */
+
+.portfolio-card-2 .portfolio-image {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portfolio-card-2 .portfolio-image img,
+.portfolio-card-2 .portfolio-image video {
+  display: block;
+
+  width: 100%;
+  max-width: 820px;
+  max-height: 600px;
+
+  height: auto;
+
+  object-fit: contain;
+
+  cursor: pointer;
+}
+
+/* VIDEO */
+
+.portfolio-card-2 .portfolio-image video {
+  pointer-events: none;
+}
+
+/* PILE */
+
+.carousel-prev-2 {
+  left: 20%;
+}
+
+.carousel-next-2 {
+  right: 20%;
+}
+
+/* MOBIL */
+
+@media (max-width: 800px) {
+  .portfolio-carousel-2 {
+    padding: 0 3% 60px;
+  }
+
+  .portfolio-card-2 {
+    min-width: 60%;
+    padding: 20px 7%;
+  }
+}
+
+@media (max-width: 550px) {
+  .portfolio-carousel-2 {
+    padding-bottom: 50px;
+  }
+
+  .portfolio-card-2 {
+    min-width: 80%;
+  }
+}
+
+/* ==================================================
+   KATEGORIER TIL CAROUSEL 2
+================================================== */
+
+.portfolio-categories-2 {
+  display: flex;
+
+  justify-content: flex-end;
+  align-items: center;
+
+  gap: 10px;
+
+  width: 100%;
+
+  margin-top: 100px;
+  margin-bottom: 25px;
+
+  padding-right: 5.5%;
+}
+
+/* ==================================================
+   OM MIG – HEADER
+================================================== */
+
+.about-hero {
+  background-color: var(--grey);
+
+  min-height: 650px;
+
+  padding: 0;
+
+  display: grid;
+
+  grid-template-columns: 70% 30%;
+
+  align-items: end;
+
+  overflow: hidden;
+}
+
+.about-hero-text {
+  padding-bottom: 100px;
+}
+
+.about-hero-text h1 {
+  margin: 0;
+
+  font-size: clamp(65px, 7vw, 115px);
+
+  line-height: 0.9;
+
+  font-weight: 300;
+
+  letter-spacing: -4px;
+
+  color: var(--p);
+}
+
+.about-hero-text h2 {
+  margin: 15px 0 0;
+
+  font-size: clamp(25px, 3vw, 42px);
+
+  line-height: 1;
+
+  font-weight: 700;
+
+  letter-spacing: -1.5px;
+
+  color: var(--pink);
+}
+
+.about-hero-image {
+  display: flex;
+
+  justify-content: flex-start;
+
+  align-items: flex-end;
+
+  height: 100%;
+}
+
+.about-hero-image img {
+  display: block;
+
+  width: 80%;
+
+  max-width: none;
+
+  height: auto;
+  transform: translateX(-15%);
+}
+
+/* ANNSOFIE-BILLEDE */
+
+.annsofie-image {
+  justify-content: flex-start;
+}
+
+.annsofie-image img {
+  width: 230%;
+  max-width: none;
+  height: auto;
+  transform: translate(-59%, -400px);
+}
+
+/* ==================================================
+   OM MIG – GENERELLE SEKTIONER
+================================================== */
+
+.about-section {
+  background-color: var(--grey);
+
+  width: 100%;
+
+  padding: 90px 8%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 30px;
+}
+
+/* Overskriftsbokse */
+
+.about-heading {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+.about-heading h2,
+.about-heading h3 {
+  margin: 0;
+
+  color: white;
+
+  font-weight: 700;
+
+  line-height: 1;
+}
+
+.about-heading h2 {
+  background-color: var(--light-pink);
+
+  padding: 9px 15px;
+
+  font-size: 18px;
+}
+
+.about-heading h3 {
+  background-color: var(--pink);
+
+  padding: 9px 15px;
+
+  font-size: 18px;
+}
+
+/* Brødtekst */
+
+.about-text {
+  width: 100%;
+
+  max-width: none;
+}
+
+.about-text p {
+  width: 100%;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+
+  margin: 0 0 22px;
+}
+
+/* ==================================================
+   FUN FACT
+================================================== */
+
+.fun-fact {
+  background-color: var(--grey);
+
+  width: 100%;
+
+  padding: 90px 8% 100px;
+}
+
+/* Overskrift */
+
+.fun-fact-heading {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  margin-bottom: 45px;
+}
+
+.fun-fact-heading h2,
+.fun-fact-heading h3 {
+  margin: 0;
+
+  color: white;
+
+  font-weight: 700;
+
+  line-height: 1;
+}
+
+.fun-fact-heading h2 {
+  background-color: var(--pink);
+
+  padding: 10px 16px;
+
+  font-size: 22px;
+}
+
+.fun-fact-heading h3 {
+  background-color: var(--dark);
+
+  padding: 10px 16px;
+
+  font-size: 22px;
+}
+
+/* Tekst + Tyson */
+
+.fun-fact-content {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: 60% 40%;
+
+  align-items: end;
+
+  gap: 30px;
+}
+
+.fun-fact-text {
+  width: 100%;
+
+  max-width: none;
+
+  padding-bottom: 70px;
+}
+
+.fun-fact-text p {
+  font-size: 14px;
+
+  line-height: 1.6;
+
+  margin: 0 0 22px;
+}
+
+.fun-fact-image {
+  display: flex;
+
+  justify-content: flex-end;
+
+  align-items: flex-end;
+}
+
+.fun-fact-image img {
+  display: block;
+
+  width: 100%;
+
+  max-width: 500px;
+
+  height: auto;
+}
+
+/* ==================================================
+   OM MIG – TABLET
+================================================== */
+
+@media (max-width: 800px) {
+  .about-hero {
+    min-height: 500px;
+    grid-template-columns: 1fr 1fr;
+    padding: 0;
+  }
+
+  .about-hero-text {
+    padding-bottom: 70px;
+  }
+
+  .about-section {
+    padding: 80px 7%;
+
+    gap: 50px;
+  }
+
+  .fun-fact {
+    padding-left: 7%;
+
+    padding-right: 7%;
+  }
+}
+
+/* ==================================================
+   OM MIG – MOBIL
+================================================== */
+
+@media (max-width: 550px) {
+  .about-hero {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+
+  .about-hero-image {
+    order: 1;
+
+    justify-content: flex-start;
+  }
+
+  .about-hero-image img {
+    width: 90%;
+
+    max-width: 450px;
+  }
+
+  .about-hero-box {
+    order: 2;
+
+    padding: 40px 8%;
+  }
+
+  .about-hero-box h1 {
+    font-size: 28px;
+  }
+
+  .about-hero-box h2 {
+    font-size: 19px;
+  }
+
+  .about-section {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+
+    padding: 65px 8%;
+  }
+
+  .soft-skills .about-text {
+    order: 2;
+  }
+
+  .soft-skills .about-heading {
+    order: 1;
+
+    align-items: flex-start;
+  }
+
+  .fun-fact {
+    padding: 65px 8% 60px;
+  }
+
+  .fun-fact-content {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+  .fun-fact-text {
+    padding-bottom: 20px;
+  }
+
+  .fun-fact-image {
+    justify-content: center;
+  }
+
+  .fun-fact-image img {
+    width: 90%;
+  }
+}

@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Portfolio – Ann-Sofie Solsbæk</title>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- ==================================================
+         NAVBAR
+    ================================================== -->
+
+    <header class="navbar">
+      <a href="index.html" class="logo-container">
+        <img src="img/logo.png" alt="Ann-Sofie Solsbæk logo" />
+
+        <span>ANN-SOFIE SOLSBÆK</span>
+      </a>
+
+      <nav class="nav-menu">
+        <a href="portfolio.html" class="nav-link active"> PORTFOLIO </a>
+
+        <a href="om-mig.html" class="nav-link"> OM MIG </a>
+
+        <button class="nav-link" id="contactButton">KONTAKT</button>
+      </nav>
+
+      <!-- KONTAKTBOKS -->
+
+      <div class="contact-box" id="contactBox">
+        <a href="mailto:annsofiesolsbaek@gmail.com">
+          annsofiesolsbaek@gmail.com
+        </a>
+
+        <div class="contact-icons">
+          <a
+            href="www.linkedin.com/in/ann-sofie-solsbæk-339b58206"
+            aria-label="LinkedIn"
+          >
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+
+          <a
+            href="https://wa.me/45DITTELEFONNUMMER?text=Hej%20Ann-Sofie%2C%20jeg%20har%20set%20dit%20portfolio!"
+            aria-label="WhatsApp"
+            target="_blank"
+          >
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+
+          <button id="closeContact" class="close-contact">×</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- ==================================================
+             PORTFOLIO INTRO
+        ================================================== -->
+
+      <section class="portfolio-hero">
+        <div class="portfolio-title">
+          <h1>PORTFOLIO</h1>
+
+          <h2>HVAD KAN HUN ENTLIG?</h2>
+
+          <div class="portfolio-categories">
+            <span class="portfolio-category-dark"> CHARACTER DESIGN </span>
+
+            <span class="portfolio-category-light"> FRITID </span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================
+            CAROUSEL
+        ================================================== -->
+
+     <section class="portfolio-carousel">
+
+  <div class="carousel-window">
+
+    <div class="carousel-track" id="carouselTrack">
+
+      <!-- KOPI AF KASPER TIL LOOP -->
+      <article class="portfolio-card">
+        <div class="portfolio-image">
+          <img src="img/kasper.png" alt="Character design">
+        </div>
+      </article>
+
+      <!-- GIRLS -->
+      <article class="portfolio-card">
+        <div class="portfolio-image">
+          <img src="img/girls.png" alt="Character design">
+        </div>
+      </article>
+
+      <!-- MIG -->
+      <article class="portfolio-card">
+        <div class="portfolio-image">
+          <img src="img/mig.png" alt="Character design">
+        </div>
+      </article>
+
+      <!-- SAIFU -->
+      <article class="portfolio-card">
+        <div class="portfolio-image">
+          <img src="img/saifu.png" alt="Character design">
+        </div>
+      </article>
+
+      <!-- WORKMIG -->
+      <article class="portfolio-card">
+        <div class="portfolio-image">
+          <img src="img/workmig.png" alt="Character design">
+        </div>
+      </article>
+
+      <!-- KASPER -->
+      <article class="portfolio-card">
+        <div class="portfolio-image">
+          <img src="img/kasper.png" alt="Character design">
+        </div>
+      </article>
+
+      <!-- KOPI AF GIRLS TIL LOOP -->
+      <article class="portfolio-card">
+        <div class="portfolio-image">
+          <img src="img/girls.png" alt="Character design">
+        </div>
+      </article>
+
+    </div>
+
+    <!-- PILENE -->
+    <button
+      class="carousel-arrow carousel-prev"
+      id="prevProject"
+      aria-label="Forrige billede"
+    >
+      ←
+    </button>
+
+    <button
+      class="carousel-arrow carousel-next"
+      id="nextProject"
+      aria-label="Næste billede"
+    >
+      →
+    </button>
+
+  </div>
+
+</section>
+
+        <!-- ==================================================
+     CAROUSEL 2 – SKOLE
+================================================== -->
+
+<div class="portfolio-categories portfolio-categories-2">
+  <span class="portfolio-category-dark">ADOOBE</span>
+  <span class="portfolio-category-light">SKOLE</span>
+</div>
+
+<section class="portfolio-carousel portfolio-carousel-2">
+
+  <div class="carousel-window carousel-window-2">
+
+    <div class="carousel-track carousel-track-2" id="carouselTrack2">
+
+      <!-- KOPI AF VANDMAND TIL LOOP -->
+      <article class="portfolio-card portfolio-card-2">
+        <div class="portfolio-image">
+          <img src="img/vandman.png" alt="Illustration af vandmand">
+        </div>
+      </article>
+
+      <!-- KAFFE TYSON -->
+      <article class="portfolio-card portfolio-card-2">
+        <div class="portfolio-image">
+          <img src="img/kaffetyson.gif" alt="Kaffetyson animation">
+        </div>
+      </article>
+
+      <!-- PEPPER GHOST -->
+      <article class="portfolio-card portfolio-card-2">
+        <div class="portfolio-image">
+          <video
+            src="video/peppergohst.mp4"
+            autoplay
+            muted
+            loop
+            playsinline
+          ></video>
+        </div>
+      </article>
+
+      <!-- PINK CAR -->
+      <article class="portfolio-card portfolio-card-2">
+        <div class="portfolio-image">
+          <img src="img/pinkcar.png" alt="Pink bil illustration">
+        </div>
+      </article>
+
+      <!-- POLAROID -->
+      <article class="portfolio-card portfolio-card-2">
+        <div class="portfolio-image">
+          <img src="img/polaroid.gif" alt="Polaroid animation">
+        </div>
+      </article>
+
+      <!-- VANDMAND -->
+      <article class="portfolio-card portfolio-card-2">
+        <div class="portfolio-image">
+          <img src="img/vandman.png" alt="Illustration af vandmand">
+        </div>
+      </article>
+
+      <!-- KOPI AF KAFFE TYSON TIL LOOP -->
+      <article class="portfolio-card portfolio-card-2">
+        <div class="portfolio-image">
+          <img src="img/kaffetyson.gif" alt="Kaffetyson animation">
+        </div>
+      </article>
+
+    </div>
+
+    <!-- PILENE -->
+    <button
+      class="carousel-arrow carousel-prev carousel-prev-2"
+      id="prevProject2"
+      aria-label="Forrige billede"
+    >
+      ←
+    </button>
+
+    <button
+      class="carousel-arrow carousel-next carousel-next-2"
+      id="nextProject2"
+      aria-label="Næste billede"
+    >
+      →
+    </button>
+
+  </div>
+
+</section>
+
+      <!-- ==================================================
+             HARD SKILLS
+        ================================================== -->
+      <section class="hard-skills">
+        <!-- Overgang øverst -->
+        <div class="hard-skills-transition">
+          <img src="img/overgang2.png" alt="" />
+        </div>
+
+        <!-- Hvid boks -->
+        <div class="hard-skills-box">
+          <div class="hard-skills-content">
+            <h2>
+              HARD,<br />
+              <span>SKILLS</span>
+            </h2>
+
+            <img
+              src="img/hardskills.png"
+              alt="Hard skills"
+              class="hardskills-image"
+            />
+          </div>
+
+          <!-- GIF / video til højre -->
+          <div class="mig">
+            <video src="video/mig.mp4" autoplay muted loop playsinline></video>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ==================================================
+         FOOTER
+    ================================================== -->
+
+    <footer class="footer">
+      <h2>
+        MULTIMEDIEDESIGN<br />
+        PORTFOLIO
+      </h2>
+
+      <div class="footer-info">
+        <p>Ann-Sofie Solsbæk</p>
+
+        <p>Erhvervsakademi Aarhus – Multimediedesign</p>
+      </div>
+
+      <div class="footer-contact">
+        <p>Kontakt mig her</p>
+
+        <div class="footer-icons">
+          <a
+            href="https://wa.me/45DITTELEFONNUMMER?text=Hej%20Ann-Sofie%2C%20jeg%20har%20set%20dit%20portfolio!"
+            target="_blank"
+            aria-label="WhatsApp"
+          >
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+
+          <a href="mailto:dinmail@email.dk" aria-label="Email">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+
+          <a
+            href="www.linkedin.com/in/ann-sofie-solsbæk-339b58206"
+            target="_blank"
+            aria-label="LinkedIn"
+          >
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+
+          <a href="#" target="_blank" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+
+      <p class="copyright">
+        Copyright © 2026 Ann-Sofie Solsbæk – Alle rettigheder forbeholdes
+      </p>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
