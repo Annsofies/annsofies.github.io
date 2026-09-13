@@ -2,7 +2,7 @@
    GOOGLE FONTS
 ================================================== */
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Just+Me+Again+Down+Here&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Just+Me+Again+Down+Here&display=swap");
 
 /* ==================================================
    FARVER
@@ -66,8 +66,6 @@ button {
    TYPOGRAFI
 ================================================== */
 
-/* Store overskrifter */
-
 .home-hero h1,
 .home-about-content h2,
 .section-heading-center h2,
@@ -81,10 +79,9 @@ button {
 .footer h2 {
   font-family: "Inter", sans-serif;
   font-weight: 900;
+
   letter-spacing: -0.07em;
 }
-
-/* Dekorativ håndskrevet tekst */
 
 .handwritten,
 .home-hero-small-text,
@@ -92,6 +89,7 @@ button {
 .portfolio-new-hero > p {
   font-family: "Just Me Again Down Here", cursive;
   font-weight: 400;
+
   line-height: 1;
 }
 
@@ -105,9 +103,9 @@ button {
   z-index: 1000;
 
   width: 100%;
-  min-height: 70px;
+  height: 70px;
 
-  padding: 0 2.5%;
+  padding: 0 3%;
 
   background-color: var(--beige);
   color: var(--brown);
@@ -121,19 +119,53 @@ button {
     color 0.3s ease;
 }
 
-.logo-container,
-.logo-container span,
-.nav-menu,
-.nav-link {
+/* LOGO */
+
+.logo-container {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  color: inherit;
+}
+
+.logo-container img {
+  width: 52px;
+  height: 52px;
+
+  object-fit: contain;
+}
+
+.logo-container span {
+  color: inherit;
+
+  font-size: 11px;
+  font-weight: 400;
+}
+
+/* NAVIGATION */
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+
+  gap: 25px;
+
   color: inherit;
 }
 
 .nav-link {
+  padding: 5px 0;
+
   border: none;
 
   background: transparent;
 
+  color: inherit;
+
   font-size: 11px;
+  font-weight: 400;
 
   cursor: pointer;
 }
@@ -149,7 +181,7 @@ button {
 .contact-box {
   position: absolute;
 
-  right: 2.5%;
+  right: 3%;
   top: 70px;
 
   width: min(420px, 90vw);
@@ -157,6 +189,7 @@ button {
   padding: 18px;
 
   display: none;
+
   align-items: center;
   justify-content: space-between;
 
@@ -222,6 +255,7 @@ button {
   text-align: center;
 
   font-size: 12px;
+
   letter-spacing: 0.05em;
 }
 
@@ -264,26 +298,23 @@ button {
   overflow: hidden;
 }
 
-/* PORTFOLIO */
-
 .home-hero h1 {
   width: 100%;
 
   color: var(--pink);
 
   font-family: "Inter", sans-serif;
-  font-size: clamp(150px, 23vw, 360px);
+  font-size: clamp(180px, 25vw, 400px);
   font-weight: 900;
 
   letter-spacing: -0.07em;
   line-height: 0.72;
 
   text-align: center;
-
   white-space: nowrap;
 }
 
-/* DEKORATIV TEKST ØVERST */
+/* Dekorativ tekst øverst */
 
 .home-hero-small-text {
   position: absolute;
@@ -293,7 +324,6 @@ button {
 
   z-index: 2;
 
-  font-family: "Just Me Again Down Here", cursive;
   font-size: clamp(35px, 4vw, 65px);
 
   line-height: 0.85;
@@ -301,7 +331,7 @@ button {
   transform: rotate(-8deg);
 }
 
-/* HILSEN */
+/* Hilsen */
 
 .home-signature {
   position: absolute;
@@ -311,16 +341,13 @@ button {
 
   z-index: 2;
 
-  font-family: "Just Me Again Down Here", cursive;
   font-size: clamp(35px, 4vw, 65px);
-
-  line-height: 1;
 
   transform: rotate(-4deg);
 }
 
 /* ==================================================
-   FORSIDE - HEJ / OM MIG
+   FORSIDE - OM MIG
 ================================================== */
 
 .home-about {
@@ -340,8 +367,6 @@ button {
   align-items: center;
 }
 
-/* BILLEDE */
-
 .home-about-image {
   display: flex;
   align-items: center;
@@ -357,22 +382,17 @@ button {
   object-fit: cover;
 }
 
-/* OVERSKRIFT */
-
 .home-about-content h2 {
   margin-bottom: 40px;
 
   color: var(--pink);
 
-  font-family: "Inter", sans-serif;
-  font-size: clamp(60px, 7vw, 110px);
-  font-weight: 900;
+  font-size: clamp(55px, 5.5vw, 90px);
 
-  letter-spacing: -0.07em;
   line-height: 0.9;
 }
 
-/* DEN LYSERE TEKST UNDER HEJ */
+/* Inter Light */
 
 .home-about-intro {
   max-width: 650px;
@@ -405,8 +425,6 @@ button {
   background-color: var(--blue);
 }
 
-/* HEADING */
-
 .section-heading-center {
   margin-bottom: 50px;
 
@@ -414,32 +432,30 @@ button {
 }
 
 .section-heading-center h2 {
-  font-family: "Inter", sans-serif;
   font-size: clamp(95px, 12vw, 180px);
-  font-weight: 900;
 
-  letter-spacing: -0.07em;
   line-height: 0.75;
 }
 
-/* HARD VS SOFT */
+/* hard vs. soft */
 
 .section-heading-center .handwritten {
   display: block;
 
-  margin-top: 20px;
+  margin-top: -20px;
 
   color: var(--pink);
 
-  font-family: "Just Me Again Down Here", cursive;
   font-size: clamp(40px, 4vw, 65px);
 
-  line-height: 1;
+  position: relative;
 
-  transform: none;
+  left: -100px;
+
+  transform: rotate(4deg);
 }
 
-/* TO KOLONNER */
+/* skill-kolonner */
 
 .skills-grid {
   width: 100%;
@@ -458,13 +474,10 @@ button {
 
 .skill-column {
   display: flex;
-
   flex-direction: column;
 
   align-items: center;
 }
-
-/* BILLEDBOKS */
 
 .skills-box {
   width: 100%;
@@ -489,8 +502,6 @@ button {
   object-fit: contain;
 }
 
-/* TEKST UNDER BILLEDERNE */
-
 .skill-caption {
   width: 100%;
 
@@ -505,18 +516,25 @@ button {
   line-height: 1;
 }
 
+.skill-column:first-child .skill-caption {
+  margin-top: -55px;
+
+  position: relative;
+  left: -25px;
+
+  transform: rotate(-4deg);
+}
+
 /* ==================================================
    FORSIDE - PROJEKTER
 ================================================== */
 
 .home-projects {
-  padding: 100px 7% 120px;
+  padding: 100px 7% 50px;
 
   background-color: var(--brown);
   color: var(--beige);
 }
-
-/* OVERSKRIFT */
 
 .home-projects-heading {
   width: 100%;
@@ -532,20 +550,11 @@ button {
 .home-projects-heading h2 {
   color: var(--pink);
 
-  font-family: "Inter", sans-serif;
   font-size: clamp(55px, 7vw, 110px);
-  font-weight: 900;
 
-  letter-spacing: -0.07em;
   line-height: 0.9;
+  text-align: right;
 }
-
-/*
-   Denne span indeholder:
-   favorit
-   +
-   projekter
-*/
 
 .favorite-project-word {
   position: relative;
@@ -553,24 +562,23 @@ button {
   display: inline-block;
 }
 
-/* FAVORIT */
-
 .favorite-project-word .handwritten {
   position: absolute;
 
-  top: -0.75em;
-  left: 0.05em;
-
+  top: -0.55em;
+  left: -0.15em;
   color: var(--beige);
 
-  font-family: "Just Me Again Down Here", cursive;
   font-size: 0.55em;
-  font-weight: 400;
 
   letter-spacing: 0;
-  line-height: 1;
 
-  transform: rotate(-4deg);
+  transform: rotate(-8deg);
+}
+
+.project-heading-line {
+  display: block;
+  white-space: nowrap;
 }
 
 /* ==================================================
@@ -589,14 +597,8 @@ button {
 
   gap: 7%;
 
-  /*
-    VIGTIG:
-    Teksten starter ved toppen af billedet.
-  */
   align-items: start;
 }
-
-/* BILLEDER */
 
 .home-project-image {
   width: 100%;
@@ -611,8 +613,6 @@ button {
 
   margin: 0;
 }
-
-/* DE TO PLAKATER */
 
 .project-posters {
   display: grid;
@@ -632,8 +632,6 @@ button {
   object-fit: contain;
 }
 
-/* TEKST */
-
 .home-project-text {
   align-self: start;
 
@@ -645,11 +643,11 @@ button {
 
   color: var(--beige);
 
-  font-family: "Inter", sans-serif;
   font-size: clamp(30px, 3vw, 48px);
   font-weight: 900;
 
   letter-spacing: -0.07em;
+
   line-height: 1;
 }
 
@@ -672,7 +670,7 @@ button {
 .home-more {
   min-height: 800px;
 
-  padding: 160px 20px;
+  padding: 180px 20px;
 
   background-color: var(--blue);
 
@@ -686,8 +684,6 @@ button {
   text-align: center;
 }
 
-/* DEKORATIV TEKST */
-
 .home-more .handwritten {
   margin-bottom: 20px;
 
@@ -696,15 +692,9 @@ button {
   font-size: clamp(40px, 4vw, 65px);
 }
 
-/* PORTFOLIO + OM MIG */
-
 .home-more a {
-  font-family: "Inter", sans-serif;
-
   font-size: clamp(90px, 12vw, 180px);
-  font-weight: 900;
 
-  letter-spacing: -0.07em;
   line-height: 0.82;
 }
 
@@ -729,7 +719,7 @@ button {
 
   gap: 60px;
 
-  align-items: center;
+  align-items: start;
 }
 
 .about-new-image img {
@@ -756,11 +746,13 @@ button {
   position: absolute;
 
   left: 0;
-  bottom: -15px;
+  bottom: -20px;
 
   color: var(--pink);
 
   font-size: clamp(35px, 4vw, 60px);
+
+  transform: rotate(-2deg);
 }
 
 .about-new-text p {
@@ -774,7 +766,7 @@ button {
 }
 
 .about-buttons {
-  margin-top: 35px;
+  margin-top: 65px;
 
   display: flex;
 
@@ -802,15 +794,14 @@ button {
 }
 
 .about-big-photo {
-  max-width: 900px;
-
+  max-width: 750px;
   margin: 0 auto;
 }
 
-.large-placeholder {
-  min-height: 520px;
-
-  background: #d8d0c5;
+.about-tyson-photo {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* ==================================================
@@ -821,7 +812,7 @@ button {
   background: var(--brown);
   color: var(--beige);
 
-  padding: 80px 8% 120px;
+  padding: 80px 8% 40px;
 }
 
 .about-funfact-title {
@@ -865,6 +856,36 @@ button {
   line-height: 1.45;
 }
 
+/* "om mig selvfølgelig" */
+
+.fun-decorative {
+  transform: rotate(-6deg);
+}
+
+/* Teksten til venstre */
+
+/* Teksten til venstre */
+.bottom-about-text {
+  transform: translateY(-100px);
+}
+
+/* Polaroid-billedet til højre */
+.about-funfact-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transform: translateY(-100px);
+}
+
+.about-funfact-image img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+
+  object-fit: contain;
+}
+
 /* ==================================================
    PORTFOLIO HERO
 ================================================== */
@@ -892,8 +913,6 @@ button {
   display: block;
 
   color: var(--pink);
-
-  font-family: "Inter", sans-serif;
 
   font-size: clamp(45px, 7vw, 100px);
 
@@ -987,10 +1006,6 @@ button {
   color: var(--brown);
 }
 
-/* ==================================================
-   CASE OVERSKRIFTER
-================================================== */
-
 .case-heading {
   position: relative;
 
@@ -1018,10 +1033,6 @@ button {
   left: auto;
   right: 5%;
 }
-
-/* ==================================================
-   CASE GRID
-================================================== */
 
 .case-grid {
   display: grid;
@@ -1088,10 +1099,6 @@ button {
   max-height: 430px;
 }
 
-/* ==================================================
-   CASE KNAPPER
-================================================== */
-
 .case-buttons {
   display: flex;
 
@@ -1121,10 +1128,6 @@ button {
   background: var(--brown-box);
   color: var(--beige);
 }
-
-/* ==================================================
-   INSTAGRAM GRID
-================================================== */
 
 .instagram-grid {
   display: grid;
@@ -1262,7 +1265,6 @@ button {
   height: 26px;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 
@@ -1291,13 +1293,6 @@ button {
   .about-funfact-grid,
   .case-grid {
     grid-template-columns: 1fr;
-  }
-
-  .home-project-row.reverse .home-project-text,
-  .home-project-row.reverse .home-project-image,
-  .reverse-grid .case-text,
-  .reverse-grid .case-media {
-    order: initial;
   }
 
   .skills-grid {
@@ -1332,19 +1327,22 @@ button {
 
 @media (max-width: 600px) {
   .navbar {
-    min-height: 60px;
+    height: 60px;
+
+    padding: 0 4%;
+  }
+
+  .logo-container img {
+    width: 42px;
+    height: 42px;
   }
 
   .logo-container span {
     display: none;
   }
 
-  .logo-container img {
-    width: 40px;
-  }
-
   .nav-menu {
-    gap: 8px;
+    gap: 10px;
   }
 
   .nav-link {
@@ -1355,21 +1353,13 @@ button {
     top: 60px;
   }
 
-  /* FORSIDE HERO */
-
   .home-hero {
     min-height: 430px;
   }
 
   .home-hero h1 {
-    margin-top: 90px;
-
     font-size: 90px;
-
-    letter-spacing: -0.07em;
   }
-
-  /* GENEREL PADDING */
 
   .home-about,
   .home-skills,
@@ -1393,8 +1383,6 @@ button {
     font-size: 60px;
   }
 
-  /* OM MIG */
-
   .about-title-wrap h1 {
     font-size: 70px;
   }
@@ -1403,8 +1391,6 @@ button {
   .about-funfact-text p {
     font-size: 15px;
   }
-
-  /* PORTFOLIO */
 
   .portfolio-new-hero {
     min-height: 560px;
@@ -1416,8 +1402,6 @@ button {
 
   .portfolio-new-title h1 {
     font-size: 95px;
-
-    letter-spacing: -0.07em;
   }
 
   .portfolio-new-hero > p {
@@ -1434,16 +1418,12 @@ button {
     font-size: 10px;
   }
 
-  /* CASES */
-
   .case-heading h2 {
     font-size: 55px;
-
-    letter-spacing: -0.07em;
   }
 
   .two-images,
-  .image-row {
+  .project-posters {
     grid-template-columns: 1fr;
   }
 
@@ -1451,17 +1431,11 @@ button {
     grid-template-columns: 1fr 1fr;
   }
 
-  /* POPUP */
-
   .project-popup-box {
     padding: 60px 25px;
   }
 
-  /* FOOTER */
-
   .footer h2 {
     font-size: 45px;
-
-    letter-spacing: -0.07em;
   }
 }
