@@ -46,11 +46,9 @@ if (navbar && colorSections.length > 0) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           const backgroundColor = entry.target.dataset.navColor;
-
           const textColor = entry.target.dataset.navText;
 
           navbar.style.backgroundColor = backgroundColor;
-
           navbar.style.color = textColor;
         }
       });
@@ -58,9 +56,7 @@ if (navbar && colorSections.length > 0) {
 
     {
       root: null,
-
       threshold: 0,
-
       rootMargin: "-70px 0px -85% 0px",
     },
   );
@@ -77,6 +73,7 @@ if (navbar && colorSections.length > 0) {
 const popupData = {
   elgiganten: {
     title: "Elgigantens 30 års",
+
     text: `
       I forbindelse med Elgigantens 30 års fødselsdag arbejdede
       jeg med plakatdesign til butikken i Viby J.
@@ -84,12 +81,15 @@ const popupData = {
       Her kan jeg senere indsætte mere om processen,
       designvalg, typografi, farver, feedback og det færdige resultat.
     `,
+
     color: "#D3E3E0",
     boxColor: "#C4DBD7",
+    textColor: "#442F2A",
   },
 
   kreakassen: {
     title: "KreaKassen",
+
     text: `
       KreaKassen er en skolecase, hvor vi udviklede en fiktiv webshop
       med kreative aktivitetskasser til børn og deres forældre.
@@ -97,24 +97,30 @@ const popupData = {
       Her kan jeg senere indsætte mere information om research,
       personaer, WordPress, designvalg, brugertests og læring.
     `,
+
     color: "#E497B5",
     boxColor: "#FFBDE2",
+    textColor: "#442F2A",
   },
 
   character: {
     title: "Character Design",
+
     text: `
       Character Design er et af mine fritidsprojekter.
 
       Her kan jeg senere vise min proces fra referencebillede
       til skitse og videre til den færdige karakter.
     `,
+
     color: "#442F2A",
     boxColor: "#4F3731",
+    textColor: "#EFE7DA",
   },
 
   ovartaci: {
     title: "Museum Ovartaci",
+
     text: `
       Museum Ovartaci var en skolecase med fokus på en digital,
       interaktiv oplevelse som ekstra lag til museets udstilling.
@@ -122,12 +128,15 @@ const popupData = {
       Her kan jeg senere indsætte billeder fra processen,
       research, prototyper, brugertests og den færdige løsning.
     `,
+
     color: "#EFE7DA",
     boxColor: "#EBDDCC",
+    textColor: "#442F2A",
   },
 
   storcenter: {
     title: "Storcenter Nord",
+
     text: `
       Storcenter Nord var en skolecase, hvor vi arbejdede med
       den eksisterende touchskærm ved akvariet.
@@ -135,20 +144,25 @@ const popupData = {
       Her kan jeg senere indsætte mere om koncept,
       JavaScript, designproces, flyer og brugertest.
     `,
+
     color: "#D3E3E0",
     boxColor: "#C4DBD7",
+    textColor: "#442F2A",
   },
 
   kasper: {
     title: "Kaspers Instagram",
+
     text: `
       Et lille fælles fritidsprojekt mellem min lillebror og mig.
 
       Her kan jeg senere indsætte eksempler på reels,
       videoer, redigering og Instagram-indhold.
     `,
+
     color: "#EFE7DA",
     boxColor: "#EBDDCC",
+    textColor: "#442F2A",
   },
 };
 
@@ -196,13 +210,21 @@ popupButtons.forEach(function (button) {
       </div>
     `;
 
-    popup.querySelector(".project-popup-box").style.backgroundColor =
-      project.color;
+    // Finder selve popup-boksen
+    const popupBox = popup.querySelector(".project-popup-box");
 
+    // Skifter baggrundsfarve efter projekt
+    popupBox.style.backgroundColor = project.color;
+
+    // Skifter tekstfarve efter projekt
+    popupBox.style.color = project.textColor;
+
+    // Viser popup
     popup.classList.add("show");
 
     popup.setAttribute("aria-hidden", "false");
 
+    // Forhindrer siden bag popup'en i at scrolle
     document.body.style.overflow = "hidden";
   });
 });
@@ -220,6 +242,7 @@ function closeProjectPopup() {
 
   popup.setAttribute("aria-hidden", "true");
 
+  // Giver siden mulighed for at scrolle igen
   document.body.style.overflow = "";
 }
 
@@ -227,6 +250,7 @@ if (popupClose) {
   popupClose.addEventListener("click", closeProjectPopup);
 }
 
+// Luk popup hvis man klikker udenfor boksen
 if (popup) {
   popup.addEventListener("click", function (event) {
     if (event.target === popup) {

@@ -1518,4 +1518,57 @@ button {
 
 #kreakassen .case-heading .handwritten {
   color: var(--brown);
+  left: 45%;
+  top: 65%;
+  transform: rotate(-2deg);
+}
+
+/* ==================================================
+   ELGIGANTEN
+================================================== */
+
+#elgiganten .case-heading .handwritten {
+  left: 67%;
+  transform: rotate(-8deg);
+}j
+
+/* ==================================================
+   ELGIGANTEN BILLEDER
+================================================== */
+
+.elgiganten-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+
+  align-items: stretch;
+}
+
+/* PLAKAT TIL VENSTRE */
+
+.elgiganten-main-image {
+  width: 100%;
+  height: 520px;
+
+  object-fit: contain;
+}
+
+/* DE TO BILLEDER TIL HØJRE */
+
+.elgiganten-side-images {
+  height: 520px;
+
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+
+  gap: 20px;
+}
+
+.elgiganten-side-images img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  min-height: 0;
 }
