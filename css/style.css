@@ -1530,11 +1530,7 @@ button {
 #elgiganten .case-heading .handwritten {
   left: 67%;
   transform: rotate(-8deg);
-}j
-
-/* ==================================================
-   ELGIGANTEN BILLEDER
-================================================== */
+}
 
 .elgiganten-images {
   display: grid;
@@ -1571,4 +1567,122 @@ button {
   object-fit: contain;
 
   min-height: 0;
+}
+
+/* ==================================================
+   OVARTACI 
+================================================== */
+
+.ovartaci-images {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+
+  gap: 8px;
+
+  width: 100%;
+}
+
+/* BEGGE BILLEDER FÅR PRÆCIS SAMME HØJDE */
+
+.ovartaci-project-image,
+.ovartaci-poster {
+  height: 520px;
+  width: auto;
+
+  max-width: none;
+
+  object-fit: contain;
+}
+
+#ovartaci .case-heading .handwritten {
+  left: auto;
+  right: 35%;
+}
+
+/* OVARTACI - flyt brødtekst op */
+
+#ovartaci .case-text {
+  align-self: start;
+  transform: translateY(50px);
+}
+
+/* ==================================================
+   STORCENTER NORD
+================================================== */
+
+#storcenter .case-heading .handwritten {
+  left: 30%;
+  transform: rotate(-2deg);
+}
+
+.storcenter-media {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* TRE BILLEDER ØVERST */
+
+.storcenter-top-images {
+  display: flex;
+  gap: 8px;
+
+  width: 100%;
+}
+
+.storcenter-top-images img {
+  flex: 1;
+
+  width: 0;
+  height: auto;
+
+  object-fit: contain;
+}
+
+/* FLYER UNDER */
+
+.storcenter-flyer {
+  width: 100%;
+  height: auto;
+
+  object-fit: contain;
+}
+
+/* ==================================================
+   KASPERS INSTAGRAM
+================================================== */
+
+.kasper-instagram-grid {
+  width: 100%;
+
+  display: grid;
+
+  /* Nu er der 6 billeder */
+  grid-template-columns: repeat(6, 1fr);
+
+  gap: 10px;
+
+  /* Mere luft ovenover billederne */
+  margin-top: 100px;
+  margin-bottom: -20px;
+
+  align-items: end;
+}
+
+.kasper-instagram-grid img {
+  width: 100%;
+  height: auto;
+
+  display: block;
+
+  object-fit: contain;
+}
+
+/* KASPERS INSTAGRAM - dekorativ tekst */
+
+#kasper .case-heading .handwritten {
+  left: auto;
+  right: 18%;
+  transform: rotate(2deg);
 }
