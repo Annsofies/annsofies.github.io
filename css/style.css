@@ -1,12 +1,28 @@
 /* ==================================================
+   GOOGLE FONTS
+================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Just+Me+Again+Down+Here&display=swap");
+
+/* ==================================================
    FARVER
 ================================================== */
 
 :root {
-  --grey: #f0f0f0;
-  --dark: #2b2b2b;
-  --pink: #ff72c0;
+  --brown: #442f2a;
+  --brown-box: #4f3731;
+  --brown-light: #61433c;
+
+  --beige: #efe7da;
+  --beige-box: #ebddcc;
+
+  --blue: #d3e3e0;
+  --blue-box: #c4dbd7;
+
+  --pink: #e497b5;
   --light-pink: #ffbde2;
+
+  --white: #ffffff;
 }
 
 /* ==================================================
@@ -24,12 +40,10 @@ html {
 }
 
 body {
-  background-color: var(--grey);
-  color: var(--dark);
-
-  font-family: "Helvetica Neue", Arial, sans-serif;
-
+  font-family: "Inter", sans-serif;
   font-weight: 400;
+
+  color: var(--brown);
 
   overflow-x: hidden;
 }
@@ -45,7 +59,40 @@ a {
 }
 
 button {
-  font-family: inherit;
+  font-family: "Inter", sans-serif;
+}
+
+/* ==================================================
+   TYPOGRAFI
+================================================== */
+
+/* Store overskrifter */
+
+.home-hero h1,
+.home-about-content h2,
+.section-heading-center h2,
+.home-projects-heading h2,
+.home-more a,
+.about-title-wrap h1,
+.about-funfact-title h2,
+.portfolio-new-title h1,
+.case-heading h2,
+.popup-project-title,
+.footer h2 {
+  font-family: "Inter", sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.07em;
+}
+
+/* Dekorativ håndskrevet tekst */
+
+.handwritten,
+.home-hero-small-text,
+.home-signature,
+.portfolio-new-hero > p {
+  font-family: "Just Me Again Down Here", cursive;
+  font-weight: 400;
+  line-height: 1;
 }
 
 /* ==================================================
@@ -55,54 +102,30 @@ button {
 .navbar {
   position: sticky;
   top: 0;
-
   z-index: 1000;
 
-  height: 82px;
+  width: 100%;
+  min-height: 70px;
 
-  padding: 0 5.5%;
+  padding: 0 2.5%;
 
-  background-color: var(--grey);
+  background-color: var(--beige);
+  color: var(--brown);
 
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
 
-  border-bottom: 1px solid #e5e5e5;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
-/* Logo */
-
-.logo-container {
-  display: flex;
-
-  align-items: center;
-
-  gap: 13px;
-}
-
-.logo-container img {
-  width: 67px;
-
-  height: auto;
-}
-
-.logo-container span {
-  font-size: 17px;
-
-  font-weight: 700;
-}
-
-/* Navigation */
-
-.nav-menu {
-  display: flex;
-
-  align-items: center;
-
-  gap: 31px;
+.logo-container,
+.logo-container span,
+.nav-menu,
+.nav-link {
+  color: inherit;
 }
 
 .nav-link {
@@ -110,35 +133,13 @@ button {
 
   background: transparent;
 
-  color: var(--dark);
-
-  font-size: 16px;
-
-  font-weight: 400;
-
-  padding: 3px 8px;
+  font-size: 11px;
 
   cursor: pointer;
-
-  transition: 0.2s ease;
 }
-
-/* Hover */
 
 .nav-link:hover {
-  background-color: var(--pink);
-
-  color: white;
-}
-
-/* Aktiv side */
-
-.nav-link.active {
-  background-color: var(--pink);
-
-  color: white;
-
-  font-weight: 700;
+  text-decoration: underline;
 }
 
 /* ==================================================
@@ -148,388 +149,1066 @@ button {
 .contact-box {
   position: absolute;
 
-  top: 82px;
+  right: 2.5%;
+  top: 70px;
 
-  right: 5.5%;
+  width: min(420px, 90vw);
 
-  width: 450px;
-
-  min-height: 74px;
-
-  padding: 14px 20px;
-
-  background-color: var(--pink);
-
-  color: white;
+  padding: 18px;
 
   display: none;
-
   align-items: center;
-
   justify-content: space-between;
+
+  background: var(--brown-box);
+  color: var(--beige);
 }
 
 .contact-box.show {
   display: flex;
 }
 
-.contact-box > a {
-  font-size: 16px;
-}
-
 .contact-icons {
   display: flex;
-
   align-items: center;
 
-  gap: 10px;
+  gap: 8px;
 }
 
 .contact-icons a {
-  width: 36px;
-
-  height: 36px;
-
-  background-color: white;
-
-  color: var(--dark);
-
-  border-radius: 5px;
+  width: 32px;
+  height: 32px;
 
   display: flex;
-
   align-items: center;
-
   justify-content: center;
+
+  background: var(--beige);
+  color: var(--brown);
 }
 
 .close-contact {
+  border: none;
+
   background: transparent;
+
+  color: inherit;
+
+  font-size: 25px;
+
+  cursor: pointer;
+}
+
+/* ==================================================
+   GENERELT
+================================================== */
+
+.handwritten {
+  font-size: 32px;
+}
+
+.placeholder {
+  width: 100%;
+  min-height: 220px;
+
+  background: rgba(255, 255, 255, 0.18);
+
+  border: 1px dashed rgba(68, 47, 42, 0.35);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  font-size: 12px;
+  letter-spacing: 0.05em;
+}
+
+.small-button,
+.project-button,
+.project-popup-button,
+.about-button {
+  display: inline-block;
 
   border: none;
 
-  color: white;
+  padding: 10px 14px;
 
-  font-size: 27px;
+  background: var(--brown-box);
+  color: var(--beige);
+
+  font-size: 12px;
 
   cursor: pointer;
+}
+
+/* ==================================================
+   FORSIDE HERO
+================================================== */
+
+.home-hero {
+  position: relative;
+
+  min-height: calc(100vh - 70px);
+  min-height: calc(100svh - 70px);
+
+  padding: 40px 2%;
+
+  background-color: var(--beige);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+/* PORTFOLIO */
+
+.home-hero h1 {
+  width: 100%;
+
+  color: var(--pink);
+
+  font-family: "Inter", sans-serif;
+  font-size: clamp(150px, 23vw, 360px);
+  font-weight: 900;
+
+  letter-spacing: -0.07em;
+  line-height: 0.72;
+
+  text-align: center;
+
+  white-space: nowrap;
+}
+
+/* DEKORATIV TEKST ØVERST */
+
+.home-hero-small-text {
+  position: absolute;
+
+  top: 7%;
+  left: 8%;
+
+  z-index: 2;
+
+  font-family: "Just Me Again Down Here", cursive;
+  font-size: clamp(35px, 4vw, 65px);
+
+  line-height: 0.85;
+
+  transform: rotate(-8deg);
+}
+
+/* HILSEN */
+
+.home-signature {
+  position: absolute;
+
+  right: 8%;
+  bottom: 8%;
+
+  z-index: 2;
+
+  font-family: "Just Me Again Down Here", cursive;
+  font-size: clamp(35px, 4vw, 65px);
+
+  line-height: 1;
+
+  transform: rotate(-4deg);
+}
+
+/* ==================================================
+   FORSIDE - HEJ / OM MIG
+================================================== */
+
+.home-about {
+  min-height: 720px;
+
+  padding: 80px 7%;
+
+  background-color: var(--brown);
+  color: var(--beige);
+
+  display: grid;
+
+  grid-template-columns: 42% 1fr;
+
+  gap: 8%;
+
+  align-items: center;
+}
+
+/* BILLEDE */
+
+.home-about-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-about-image img {
+  width: 100%;
+  max-width: 550px;
+
+  height: 560px;
+
+  object-fit: cover;
+}
+
+/* OVERSKRIFT */
+
+.home-about-content h2 {
+  margin-bottom: 40px;
+
+  color: var(--pink);
+
+  font-family: "Inter", sans-serif;
+  font-size: clamp(60px, 7vw, 110px);
+  font-weight: 900;
+
+  letter-spacing: -0.07em;
+  line-height: 0.9;
+}
+
+/* DEN LYSERE TEKST UNDER HEJ */
+
+.home-about-intro {
+  max-width: 650px;
+
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+}
+
+.home-about-intro p {
+  margin-bottom: 22px;
+
+  font-size: clamp(17px, 1.5vw, 22px);
+
+  line-height: 1.5;
+}
+
+.home-about-content .small-button {
+  margin-top: 25px;
+}
+
+/* ==================================================
+   FORSIDE - SKILLS
+================================================== */
+
+.home-skills {
+  min-height: 800px;
+
+  padding: 90px 7% 110px;
+
+  background-color: var(--blue);
+}
+
+/* HEADING */
+
+.section-heading-center {
+  margin-bottom: 50px;
+
+  text-align: center;
+}
+
+.section-heading-center h2 {
+  font-family: "Inter", sans-serif;
+  font-size: clamp(95px, 12vw, 180px);
+  font-weight: 900;
+
+  letter-spacing: -0.07em;
+  line-height: 0.75;
+}
+
+/* HARD VS SOFT */
+
+.section-heading-center .handwritten {
+  display: block;
+
+  margin-top: 20px;
+
+  color: var(--pink);
+
+  font-family: "Just Me Again Down Here", cursive;
+  font-size: clamp(40px, 4vw, 65px);
+
+  line-height: 1;
+
+  transform: none;
+}
+
+/* TO KOLONNER */
+
+.skills-grid {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 70px;
+
+  align-items: start;
+}
+
+.skill-column {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+/* BILLEDBOKS */
+
+.skills-box {
+  width: 100%;
+
+  min-height: 280px;
+
+  padding: 15px;
+
+  background-color: transparent;
+
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.skills-box img {
+  width: 100%;
+
+  max-height: 320px;
+
+  object-fit: contain;
+}
+
+/* TEKST UNDER BILLEDERNE */
+
+.skill-caption {
+  width: 100%;
+
+  margin-top: 15px;
+
+  color: var(--brown);
+
+  font-size: clamp(30px, 3vw, 48px);
+
+  text-align: center;
 
   line-height: 1;
 }
 
 /* ==================================================
-   HERO
+   FORSIDE - PROJEKTER
 ================================================== */
 
-.hero {
-  position: relative;
-  min-height: 600px;
-  background-color: #f0f0f0;
-  margin: 0;
+.home-projects {
+  padding: 100px 7% 120px;
+
+  background-color: var(--brown);
+  color: var(--beige);
 }
 
-.hero-content {
-  padding-left: 5.5%;
-  padding-top: 85px;
-}
+/* OVERSKRIFT */
 
-/* HELLO */
-
-.hero-title {
-  display: flex;
-
-  flex-direction: column;
-}
-
-.hero-thin {
-  font-size: clamp(65px, 7vw, 115px);
-
-  line-height: 0.95;
-
-  font-weight: 300;
-
-  letter-spacing: -4px;
-}
-
-.hero-bold {
-  margin-top: 8px;
-
-  font-size: clamp(65px, 7vw, 115px);
-
-  line-height: 0.95;
-
-  font-weight: 700;
-
-  letter-spacing: -3px;
-}
-
-/* Tekst under overskriften */
-
-.hero-info {
-  margin-top: 50px;
-}
-
-.hero-info p:first-child {
-  font-size: 14px;
-
-  margin-bottom: 3px;
-}
-
-.hero-info p:last-child {
-  font-size: 13px;
-}
-
-/* ==================================================
-   ORGANISK OVERGANG
-================================================== */
-
-.hero-wave {
+.home-projects-heading {
   width: 100%;
-  line-height: 0;
-  margin-top: -200px;
-  padding: 0;
+  max-width: 1250px;
+
+  margin: 0 auto 120px;
+
   position: relative;
-  z-index: 2;
+
+  text-align: right;
 }
 
-.hero-wave img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-/* ==================================================
-   INTRO
-================================================== */
-
-.projects-intro {
-  background-color: white;
-
-  text-align: center;
-
-  padding: 70px 20px 60px;
-}
-
-.projects-intro h2 {
-  font-size: clamp(27px, 3vw, 42px);
-
-  line-height: 1.18;
-
-  font-weight: 700;
-}
-
-.projects-intro h2 span {
+.home-projects-heading h2 {
   color: var(--pink);
+
+  font-family: "Inter", sans-serif;
+  font-size: clamp(55px, 7vw, 110px);
+  font-weight: 900;
+
+  letter-spacing: -0.07em;
+  line-height: 0.9;
+}
+
+/*
+   Denne span indeholder:
+   favorit
+   +
+   projekter
+*/
+
+.favorite-project-word {
+  position: relative;
+
+  display: inline-block;
+}
+
+/* FAVORIT */
+
+.favorite-project-word .handwritten {
+  position: absolute;
+
+  top: -0.75em;
+  left: 0.05em;
+
+  color: var(--beige);
+
+  font-family: "Just Me Again Down Here", cursive;
+  font-size: 0.55em;
+  font-weight: 400;
+
+  letter-spacing: 0;
+  line-height: 1;
+
+  transform: rotate(-4deg);
 }
 
 /* ==================================================
-   GENEREL PROJEKT
+   PROJEKTRÆKKER
 ================================================== */
 
-.project {
-  background-color: white;
-
+.home-project-row {
   width: 100%;
-  max-width: none;
+  max-width: 1200px;
 
-  margin: 0;
-
-  padding: 50px 8% 110px;
+  margin: 0 auto 130px;
 
   display: grid;
 
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 52% 1fr;
 
-  align-items: center;
+  gap: 7%;
 
-  gap: 35px;
+  /*
+    VIGTIG:
+    Teksten starter ved toppen af billedet.
+  */
+  align-items: start;
 }
 
-/* Projekttekst */
+/* BILLEDER */
 
-.project-content {
-  position: relative;
-  max-width: 440px;
-}
-
-.project-label {
-  display: inline-block;
-
-  background-color: var(--light-pink);
-
-  color: white;
-
-  padding: 9px 15px;
-
-  font-size: 11px;
-
-  font-weight: 700;
-
-  margin-bottom: 0;
-
-  position: relative;
-
-  left: auto;
-}
-
-.project h3 {
-  display: inline-block;
-
-  background-color: var(--pink);
-
-  color: white;
-
-  padding: 9px 15px;
-
-  font-size: 14px;
-
-  font-weight: 700;
-
-  margin-bottom: 28px;
-}
-
-.project p {
-  font-size: 13px;
-  line-height: 1.55;
-  margin-bottom: 22px;
-}
-
-/* ==================================================
-   CHARACTER DESIGN
-================================================== */
-
-.project-character {
-  padding-top: 15px;
-}
-
-.character-images {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0px;
+.home-project-image {
   width: 100%;
 }
 
-.character-main {
-  width: 48%;
+.home-project-image img {
+  width: 100%;
+
+  max-height: 520px;
+
+  object-fit: contain;
+
+  margin: 0;
 }
 
-.character-second {
-  width: 57%;
-  margin-left: 0px;
-  margin-right: 19px;
+/* DE TO PLAKATER */
+
+.project-posters {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 25px;
+
+  align-items: start;
 }
 
-/* ==================================================
-   STORCENTER NORD
-================================================== */
+.project-posters img {
+  width: 100%;
 
-.project-nord {
-  padding-top: 30px;
-}
-
-.nord-images {
-  display: flex;
-
-  justify-content: center;
-
-  align-items: center;
-
-  gap: 0;
-}
-
-.nord-images img {
-  width: 50%;
-
-  height: auto;
+  max-height: 520px;
 
   object-fit: contain;
 }
 
-/* ==================================================
-   OVARTACI
-================================================== */
+/* TEKST */
 
-.project-ovartaci {
-  padding-top: 45px;
+.home-project-text {
+  align-self: start;
 
-  padding-bottom: 130px;
+  padding-top: 0;
 }
 
-.ovartaci-image {
+.home-project-text h3 {
+  margin: 0 0 25px;
+
+  color: var(--beige);
+
+  font-family: "Inter", sans-serif;
+  font-size: clamp(30px, 3vw, 48px);
+  font-weight: 900;
+
+  letter-spacing: -0.07em;
+  line-height: 1;
+}
+
+.home-project-text p {
+  margin-bottom: 18px;
+
+  font-size: 16px;
+
+  line-height: 1.55;
+}
+
+.home-project-text .project-button {
+  margin-top: 20px;
+}
+
+/* ==================================================
+   FORSIDE - NEDERSTE BLÅ SECTION
+================================================== */
+
+.home-more {
+  min-height: 800px;
+
+  padding: 160px 20px;
+
+  background-color: var(--blue);
+
   display: flex;
+
+  flex-direction: column;
+
   align-items: center;
   justify-content: center;
-}
-
-.ovartaci-image img {
-  width: 65%;
-  max-width: 360px;
-  height: auto;
-}
-
-/* ==================================================
-   VIL DU SE MERE
-================================================== */
-
-.more {
-  background: linear-gradient(
-    to bottom,
-    #ffffff 0%,
-    #ffffff 18%,
-    #f8f8f8 45%,
-    #f0f0f0 100%
-  );
 
   text-align: center;
-
-  padding: 100px 20px 110px;
 }
 
-.more h2 {
-  font-size: clamp(38px, 4vw, 52px);
+/* DEKORATIV TEKST */
 
-  font-weight: 700;
+.home-more .handwritten {
+  margin-bottom: 20px;
 
-  margin-bottom: 38px;
+  color: var(--pink);
+
+  font-size: clamp(40px, 4vw, 65px);
 }
 
-.more h2 span {
+/* PORTFOLIO + OM MIG */
+
+.home-more a {
+  font-family: "Inter", sans-serif;
+
+  font-size: clamp(90px, 12vw, 180px);
+  font-weight: 900;
+
+  letter-spacing: -0.07em;
+  line-height: 0.82;
+}
+
+.home-more a:hover {
   color: var(--pink);
 }
 
-/* Knapper */
+/* ==================================================
+   OM MIG - HERO
+================================================== */
 
-.more-buttons {
-  display: flex;
+.about-new-hero {
+  min-height: 680px;
 
-  justify-content: center;
+  background: var(--beige);
 
-  gap: 12px;
+  padding: 70px 5%;
+
+  display: grid;
+
+  grid-template-columns: 42% 1fr;
+
+  gap: 60px;
+
+  align-items: center;
 }
 
-.more-buttons a {
-  width: 210px;
+.about-new-image img {
+  width: 100%;
 
-  padding: 17px 25px;
+  max-height: 560px;
 
-  background-color: var(--pink);
+  object-fit: cover;
+}
 
-  color: white;
+.about-title-wrap {
+  position: relative;
 
-  border-radius: 30px;
+  margin-bottom: 45px;
+}
+
+.about-title-wrap h1 {
+  font-size: clamp(75px, 10vw, 150px);
+
+  line-height: 0.8;
+}
+
+.about-title-wrap .handwritten {
+  position: absolute;
+
+  left: 0;
+  bottom: -15px;
+
+  color: var(--pink);
+
+  font-size: clamp(35px, 4vw, 60px);
+}
+
+.about-new-text p {
+  max-width: 650px;
+
+  margin-bottom: 25px;
+
+  font-size: 18px;
+
+  line-height: 1.45;
+}
+
+.about-buttons {
+  margin-top: 35px;
+
+  display: flex;
+
+  gap: 15px;
+
+  flex-wrap: wrap;
+}
+
+/* ==================================================
+   OM MIG - BILLEDEOVERGANG
+================================================== */
+
+.about-photo-section {
+  min-height: 540px;
+
+  background: linear-gradient(
+    to bottom,
+    var(--beige) 0%,
+    var(--beige) 45%,
+    var(--brown) 45%,
+    var(--brown) 100%
+  );
+
+  padding: 30px 14%;
+}
+
+.about-big-photo {
+  max-width: 900px;
+
+  margin: 0 auto;
+}
+
+.large-placeholder {
+  min-height: 520px;
+
+  background: #d8d0c5;
+}
+
+/* ==================================================
+   OM MIG - FUN FACT
+================================================== */
+
+.about-funfact-new {
+  background: var(--brown);
+  color: var(--beige);
+
+  padding: 80px 8% 120px;
+}
+
+.about-funfact-title {
+  position: relative;
+
+  margin-bottom: 80px;
+}
+
+.about-funfact-title h2 {
+  color: var(--pink);
+
+  font-size: clamp(70px, 10vw, 145px);
+
+  line-height: 0.8;
+}
+
+.about-funfact-title .handwritten {
+  position: absolute;
+
+  left: 0;
+  bottom: -30px;
+
+  font-size: 45px;
+}
+
+.about-funfact-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 70px;
+
+  align-items: center;
+}
+
+.about-funfact-text p {
+  margin-bottom: 25px;
+
+  font-size: 18px;
+
+  line-height: 1.45;
+}
+
+/* ==================================================
+   PORTFOLIO HERO
+================================================== */
+
+.portfolio-new-hero {
+  min-height: 650px;
+
+  position: relative;
+
+  background: var(--brown);
+  color: var(--beige);
+
+  padding: 80px 3%;
+
+  overflow: hidden;
+}
+
+.portfolio-new-title {
+  position: relative;
+
+  z-index: 2;
+}
+
+.portfolio-new-title span {
+  display: block;
+
+  color: var(--pink);
+
+  font-family: "Inter", sans-serif;
+
+  font-size: clamp(45px, 7vw, 100px);
+
+  font-weight: 900;
+
+  letter-spacing: -0.07em;
+
+  transform: translateY(20px);
+}
+
+.portfolio-new-title h1 {
+  color: var(--pink);
+
+  font-size: clamp(110px, 20vw, 300px);
+
+  line-height: 0.7;
+}
+
+.portfolio-new-hero > p {
+  position: absolute;
+
+  right: 8%;
+  bottom: 180px;
+
+  text-align: right;
+
+  font-size: 30px;
+}
+
+/* ==================================================
+   PORTFOLIO NAVIGATIONSBOKS
+================================================== */
+
+.portfolio-anchor-box {
+  position: absolute;
+
+  bottom: 30px;
+  left: 5%;
+  right: 5%;
+
+  padding: 25px;
+
+  background: var(--brown-box);
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 18px;
+
+  border-radius: 25px;
+}
+
+.portfolio-anchor-box a {
+  text-align: center;
+
+  font-size: 12px;
+}
+
+.portfolio-anchor-box a:hover {
+  color: var(--pink);
+}
+
+/* ==================================================
+   PORTFOLIO CASES
+================================================== */
+
+.case-section {
+  min-height: 650px;
+
+  padding: 65px 4% 90px;
+}
+
+.case-blue {
+  background: var(--blue);
+  color: var(--brown);
+}
+
+.case-pink {
+  background: var(--pink);
+  color: var(--brown);
+}
+
+.case-brown {
+  background: var(--brown);
+  color: var(--beige);
+}
+
+.case-beige {
+  background: var(--beige);
+  color: var(--brown);
+}
+
+/* ==================================================
+   CASE OVERSKRIFTER
+================================================== */
+
+.case-heading {
+  position: relative;
+
+  margin-bottom: 55px;
+}
+
+.case-heading h2 {
+  font-size: clamp(55px, 8vw, 120px);
+
+  line-height: 0.8;
+}
+
+.case-heading .handwritten {
+  position: absolute;
+
+  left: 48%;
+  bottom: -20px;
+
+  color: var(--pink);
+
+  font-size: clamp(30px, 3vw, 50px);
+}
+
+.case-heading-right .handwritten {
+  left: auto;
+  right: 5%;
+}
+
+/* ==================================================
+   CASE GRID
+================================================== */
+
+.case-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 60px;
+
+  align-items: center;
+}
+
+.reverse-grid .case-text {
+  order: 1;
+}
+
+.reverse-grid .case-media {
+  order: 2;
+}
+
+.case-text p,
+.case-text-full p {
+  margin-bottom: 18px;
 
   font-size: 15px;
 
-  font-weight: 700;
-
-  transition: 0.2s ease;
+  line-height: 1.5;
 }
 
-.more-buttons a:hover {
-  background-color: var(--dark);
+.case-text-full {
+  max-width: 1200px;
 
-  transform: translateY(-2px);
+  margin: 0 auto 40px;
+}
+
+.case-media {
+  width: 100%;
+}
+
+.two-images {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 20px;
+}
+
+.case-image-tall {
+  min-height: 420px;
+}
+
+.case-image-wide {
+  min-height: 350px;
+}
+
+.case-real-image {
+  width: 100%;
+
+  max-height: 450px;
+
+  object-fit: contain;
+}
+
+.case-poster {
+  max-height: 430px;
+}
+
+/* ==================================================
+   CASE KNAPPER
+================================================== */
+
+.case-buttons {
+  display: flex;
+
+  gap: 12px;
+
+  flex-wrap: wrap;
+
+  margin-top: 30px;
+}
+
+.case-pink .project-popup-button {
+  background: var(--light-pink);
+  color: var(--brown);
+}
+
+.case-blue .project-popup-button {
+  background: var(--blue-box);
+  color: var(--brown);
+}
+
+.case-beige .project-popup-button {
+  background: var(--beige-box);
+  color: var(--brown);
+}
+
+.case-brown .project-popup-button {
+  background: var(--brown-box);
+  color: var(--beige);
+}
+
+/* ==================================================
+   INSTAGRAM GRID
+================================================== */
+
+.instagram-grid {
+  display: grid;
+
+  grid-template-columns: repeat(5, 1fr);
+
+  gap: 15px;
+}
+
+/* ==================================================
+   POPUP
+================================================== */
+
+.project-popup {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 3000;
+
+  display: none;
+
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(30, 20, 18, 0.7);
+
+  padding: 30px;
+}
+
+.project-popup.show {
+  display: flex;
+}
+
+.project-popup-box {
+  position: relative;
+
+  width: min(1100px, 95vw);
+
+  max-height: 88vh;
+
+  overflow-y: auto;
+
+  padding: 70px 8%;
+
+  background: var(--beige);
+  color: var(--brown);
+}
+
+.popup-close {
+  position: absolute;
+
+  top: 20px;
+  right: 25px;
+
+  border: none;
+
+  background: transparent;
+
+  font-size: 40px;
+
+  cursor: pointer;
+}
+
+.popup-project-title {
+  margin-bottom: 25px;
+
+  font-size: clamp(45px, 7vw, 100px);
+
+  line-height: 0.9;
+}
+
+.popup-project-text {
+  max-width: 800px;
+
+  margin-bottom: 35px;
+
+  line-height: 1.5;
+}
+
+.popup-placeholder {
+  min-height: 400px;
+
+  background: var(--beige-box);
 }
 
 /* ==================================================
@@ -537,51 +1216,39 @@ button {
 ================================================== */
 
 .footer {
-  min-height: 520px;
+  min-height: 470px;
 
-  position: relative;
+  background: var(--light-pink);
 
-  background-color: var(--light-pink);
-
-  padding: 45px 2% 25px;
+  padding: 50px 2% 25px;
 
   display: flex;
 
   flex-direction: column;
-
-  border-top: none;
 }
 
 .footer h2 {
-  font-size: clamp(60px, 8vw, 115px);
+  color: #ff5bb6;
+
+  font-size: clamp(55px, 8vw, 115px);
 
   line-height: 0.9;
-
-  font-weight: 700;
-
-  color: var(--pink);
-
-  letter-spacing: -4px;
 }
 
 .footer-info {
-  margin-top: 40px;
+  margin-top: 45px;
 }
 
 .footer-info p {
   font-size: 14px;
-
-  line-height: 1.3;
 }
 
 .footer-contact {
-  margin-top: 35px;
+  margin-top: 40px;
 }
 
 .footer-contact > p {
-  font-size: 15px;
-
-  margin-bottom: 9px;
+  margin-bottom: 10px;
 }
 
 .footer-icons {
@@ -591,31 +1258,18 @@ button {
 }
 
 .footer-icons a {
-  width: 24px;
-
-  height: 24px;
-
-  border-radius: 4px;
+  width: 26px;
+  height: 26px;
 
   display: flex;
 
   align-items: center;
-
   justify-content: center;
 
-  background-color: var(--pink);
-
+  background: #ff5bb6;
   color: white;
 
-  font-size: 13px;
-
-  transition: 0.2s ease;
-}
-
-.footer-icons a:hover {
-  transform: translateY(-3px);
-
-  background-color: var(--dark);
+  border-radius: 4px;
 }
 
 .copyright {
@@ -630,57 +1284,45 @@ button {
    TABLET
 ================================================== */
 
-@media (max-width: 800px) {
-  .navbar {
-    padding: 0 4%;
-  }
-
-  .logo-container span {
-    display: none;
-  }
-
-  .nav-menu {
-    gap: 8px;
-  }
-
-  .nav-link {
-    font-size: 13px;
-  }
-
-  .hero-content {
-    padding-left: 5%;
-  }
-
-  .project {
+@media (max-width: 900px) {
+  .home-about,
+  .home-project-row,
+  .about-new-hero,
+  .about-funfact-grid,
+  .case-grid {
     grid-template-columns: 1fr;
+  }
 
-    gap: 40px;
+  .home-project-row.reverse .home-project-text,
+  .home-project-row.reverse .home-project-image,
+  .reverse-grid .case-text,
+  .reverse-grid .case-media {
+    order: initial;
+  }
 
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-anchor-box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .instagram-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .case-heading .handwritten {
+    position: static;
+
+    display: block;
+
+    margin-top: 10px;
+  }
+
+  .about-photo-section {
     padding-left: 7%;
-
     padding-right: 7%;
-  }
-
-  .project-nord .project-content {
-    order: 1;
-  }
-
-  .nord-images {
-    order: 2;
-  }
-
-  .character-images {
-    max-width: 600px;
-
-    margin: 0 auto;
-  }
-
-  .ovartaci-image {
-    justify-content: center;
-  }
-
-  .ovartaci-image img {
-    width: 40%;
   }
 }
 
@@ -688,1139 +1330,138 @@ button {
    MOBIL
 ================================================== */
 
-@media (max-width: 550px) {
+@media (max-width: 600px) {
   .navbar {
-    height: 70px;
+    min-height: 60px;
+  }
+
+  .logo-container span {
+    display: none;
   }
 
   .logo-container img {
-    width: 55px;
+    width: 40px;
   }
 
   .nav-menu {
-    gap: 3px;
+    gap: 8px;
   }
 
   .nav-link {
-    font-size: 11px;
-
-    padding: 4px 5px;
+    font-size: 9px;
   }
 
   .contact-box {
-    top: 70px;
-
-    left: 5%;
-
-    right: 5%;
-
-    width: 90%;
+    top: 60px;
   }
 
-  .hero {
-    min-height: 470px;
+  /* FORSIDE HERO */
+
+  .home-hero {
+    min-height: 430px;
   }
 
-  .hero-content {
-    padding-top: 70px;
+  .home-hero h1 {
+    margin-top: 90px;
+
+    font-size: 90px;
+
+    letter-spacing: -0.07em;
   }
 
-  .hero-thin,
-  .hero-bold {
-    font-size: 57px;
+  /* GENEREL PADDING */
 
-    letter-spacing: -2px;
+  .home-about,
+  .home-skills,
+  .home-projects,
+  .about-new-hero,
+  .about-funfact-new,
+  .case-section {
+    padding-left: 6%;
+    padding-right: 6%;
   }
 
-  .hero-info {
-    margin-top: 35px;
+  .home-about-content h2 {
+    font-size: 50px;
   }
 
-  .hero-info p:last-child {
-    max-width: 320px;
+  .home-projects-heading h2 {
+    font-size: 38px;
   }
 
-  .projects {
-    background-color: white;
-    margin: 0;
-    padding: 0 8% 110px;
+  .home-more a {
+    font-size: 60px;
   }
 
-  .project {
-    padding-top: 20px;
+  /* OM MIG */
 
-    padding-bottom: 80px;
+  .about-title-wrap h1 {
+    font-size: 70px;
   }
 
-  .character-images {
-    flex-direction: column;
+  .about-new-text p,
+  .about-funfact-text p {
+    font-size: 15px;
   }
 
-  .character-main,
-  .character-second {
-    width: 70%;
+  /* PORTFOLIO */
+
+  .portfolio-new-hero {
+    min-height: 560px;
   }
 
-  .nord-images {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    width: 100%;
+  .portfolio-new-title span {
+    font-size: 40px;
   }
 
-  .nord-images img {
-    width: 50%;
-    height: auto;
-    object-fit: contain;
+  .portfolio-new-title h1 {
+    font-size: 95px;
+
+    letter-spacing: -0.07em;
   }
 
-  .ovartaci-image img {
-    width: 60%;
+  .portfolio-new-hero > p {
+    position: static;
+
+    margin-top: 60px;
+
+    text-align: left;
   }
 
-  .more-buttons {
-    flex-direction: column;
+  .portfolio-anchor-box {
+    grid-template-columns: 1fr 1fr;
 
-    align-items: center;
+    font-size: 10px;
   }
 
-  .footer {
-    min-height: 400px;
+  /* CASES */
+
+  .case-heading h2 {
+    font-size: 55px;
+
+    letter-spacing: -0.07em;
   }
+
+  .two-images,
+  .image-row {
+    grid-template-columns: 1fr;
+  }
+
+  .instagram-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* POPUP */
+
+  .project-popup-box {
+    padding: 60px 25px;
+  }
+
+  /* FOOTER */
 
   .footer h2 {
-    font-size: 48px;
-  }
-}
+    font-size: 45px;
 
-/* ==================================================
-   KLIKBARE PROJEKTBILLEDER
-================================================== */
-
-.project-images img {
-  cursor: pointer;
-
-  transition: transform 0.2s ease;
-}
-
-.project-images img:hover {
-  transform: scale(1.02);
-}
-
-/* ==================================================
-   IMAGE LIGHTBOX
-================================================== */
-
-.image-lightbox {
-  position: fixed;
-
-  inset: 0;
-
-  z-index: 2000;
-
-  background-color: rgba(43, 43, 43, 0.9);
-
-  display: none;
-
-  align-items: center;
-
-  justify-content: center;
-
-  padding: 40px;
-}
-
-.image-lightbox.show {
-  display: flex;
-}
-
-/* Det store billede */
-
-.image-lightbox img {
-  max-width: 90vw;
-
-  max-height: 90vh;
-
-  width: auto;
-
-  height: auto;
-
-  object-fit: contain;
-
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
-}
-
-/* X */
-
-.lightbox-close {
-  position: absolute;
-
-  top: 25px;
-
-  right: 35px;
-
-  border: none;
-
-  background: transparent;
-
-  color: white;
-
-  font-size: 45px;
-
-  font-weight: 300;
-
-  line-height: 1;
-
-  cursor: pointer;
-}
-
-.lightbox-close:hover {
-  color: var(--pink);
-}
-
-/* ==================================================
-   PORTFOLIO OVERSKRIFT
-================================================== */
-
-.portfolio-hero {
-  background-color: var(--grey);
-
-  padding: 85px 5.5% 70px;
-}
-
-.portfolio-title {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-/* Stor overskrift */
-
-.portfolio-title h1 {
-  margin: 0;
-
-  font-family: "Helvetica Neue", Arial, sans-serif;
-
-  font-size: clamp(65px, 7vw, 115px);
-
-  line-height: 0.95;
-
-  font-weight: 300;
-
-  letter-spacing: -4px;
-
-  color: var(--dark);
-}
-
-/* Lyserød h2 */
-
-.portfolio-title h2 {
-  margin: 15px 0 0;
-
-  font-family: "Helvetica Neue", Arial, sans-serif;
-
-  font-size: clamp(25px, 3vw, 42px);
-
-  line-height: 1;
-
-  font-weight: 700;
-
-  letter-spacing: -1.5px;
-
-  color: var(--pink);
-}
-
-/* ==================================================
-   PORTFOLIO CAROUSEL
-================================================== */
-
-.portfolio-carousel {
-  background-color: var(--grey);
-
-  width: 100%;
-
-  padding: 20px 0 50px;
-
-  display: flex;
-
-  justify-content: center;
-}
-
-/* CAROUSEL VINDUE */
-
-.carousel-window {
-  position: relative;
-
-  width: 100%;
-
-  max-width: 1400px;
-
-  overflow: hidden;
-
-  padding: 0;
-}
-
-/* SELVE RÆKKEN */
-
-.carousel-track {
-  display: flex;
-
-  align-items: center;
-
-  transition: transform 0.5s ease;
-
-  will-change: transform;
-}
-
-/* ==================================================
-   SLIDES
-================================================== */
-
-.portfolio-card {
-  min-width: 60%;
-
-  flex-shrink: 0;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  padding: 30px 15px;
-
-  transform: scale(0.72);
-
-  transition: transform 0.5s ease;
-}
-
-/* MIDTERSTE BILLEDE */
-
-.portfolio-card.active {
-  transform: scale(1);
-}
-
-/* ==================================================
-   BILLEDER
-================================================== */
-
-.portfolio-image {
-  width: 100%;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-}
-
-.portfolio-image img {
-  display: block;
-
-  width: 100%;
-
-  max-width: 820px;
-
-  max-height: 600px;
-
-  height: auto;
-
-  object-fit: contain;
-
-  cursor: pointer;
-}
-
-/* ==================================================
-   PILE
-================================================== */
-
-.carousel-arrow {
-  position: absolute;
-
-  top: 50%;
-
-  transform: translateY(-50%);
-
-  z-index: 30;
-
-  width: 45px;
-
-  height: 45px;
-
-  border: none;
-
-  border-radius: 50%;
-
-  background-color: var(--pink);
-
-  color: white;
-
-  font-size: 24px;
-
-  cursor: pointer;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  transition:
-    background-color 0.2s ease,
-    transform 0.2s ease;
-}
-
-/* HOVER */
-
-.carousel-arrow:hover {
-  background-color: #f42a9a;
-
-  transform: translateY(-50%) scale(1.08);
-}
-
-/* TÆT PÅ MIDTERBILLEDET */
-
-.carousel-prev {
-  left: 20%;
-}
-
-.carousel-next {
-  right: 20%;
-}
-
-/* ==================================================
-   PORTFOLIO MOBIL
-================================================== */
-
-@media (max-width: 800px) {
-  .portfolio-carousel {
-    gap: 10px;
-
-    padding: 50px 3%;
-  }
-
-  .portfolio-card {
-    grid-template-columns: 1fr;
-
-    gap: 35px;
-
-    padding: 20px 7%;
-  }
-
-  .portfolio-card-content {
-    max-width: 500px;
-
-    margin: 0 auto;
-
-    text-align: center;
-  }
-
-  .portfolio-category,
-  .portfolio-card h2 {
-    margin-left: auto;
-
-    margin-right: auto;
-  }
-
-  .portfolio-image img {
-    max-width: 500px;
-  }
-
-  .carousel-arrow {
-    width: 40px;
-
-    height: 40px;
-
-    font-size: 20px;
-  }
-}
-
-@media (max-width: 550px) {
-  .portfolio-hero {
-    padding: 70px 5% 50px;
-  }
-
-  .portfolio-title h1 {
-    font-size: 57px;
-    letter-spacing: -2px;
-  }
-
-  .portfolio-title h2 {
-    font-size: 25px;
-    line-height: 1.05;
-  }
-}
-
-.portfolio-carousel {
-  padding: 0px 1% 35px;
-}
-
-.carousel-arrow {
-  width: 35px;
-
-  height: 35px;
-
-  font-size: 18px;
-}
-
-.portfolio-card {
-  padding: 15px 5% 30px;
-}
-
-.portfolio-card h2 {
-  font-size: 18px;
-}
-
-.skills-list {
-  grid-template-columns: 1fr;
-}
-
-/* ==================================================
-   HARD SKILLS
-================================================== */
-
-.hard-skills {
-  position: relative;
-  width: 100%;
-}
-
-/* ------------------------------
-   OVERGANG
------------------------------- */
-
-.hard-skills-transition {
-  width: 100%;
-  height: 100px;
-
-  line-height: 0;
-  position: relative;
-  z-index: 2;
-}
-
-.hard-skills-transition img {
-  display: block;
-  width: 100%;
-  height: 100px;
-}
-
-/* ------------------------------
-   HVID BOKS
------------------------------- */
-.hard-skills-box {
-  position: relative;
-  width: 100%;
-  min-height: 500px;
-  background-color: white;
-  overflow: visible;
-  z-index: 3;
-}
-
-/* ------------------------------
-   INDHOLD
------------------------------- */
-
-.hard-skills-content {
-  position: relative;
-
-  width: 84%;
-  max-width: 1200px;
-
-  margin: 0 auto;
-
-  padding-top: 0px;
-  transform: translateY(-40px);
-  padding-bottom: 100px;
-}
-
-/* ------------------------------
-   OVERSKRIFT
------------------------------- */
-
-.hard-skills-content h2 {
-  margin: 0;
-
-  font-size: clamp(70px, 9vw, 130px);
-
-  line-height: 0.8;
-
-  letter-spacing: -5px;
-
-  font-weight: 700;
-
-  color: var(--dark);
-}
-
-.hard-skills-content h2 span {
-  color: var(--pink);
-  font-weight: 300;
-}
-
-/* ------------------------------
-   HARD SKILLS BILLEDE
------------------------------- */
-
-.hardskills-image {
-  display: block;
-
-  width: 500px;
-  max-width: 50%;
-
-  height: auto;
-
-  margin-top: 100px;
-}
-
-/* ------------------------------
-   MIG VIDEO
------------------------------- */
-
-.mig {
-  position: absolute;
-
-  right: 8%;
-  bottom: 0;
-
-  z-index: 5;
-}
-
-.mig video {
-  display: block;
-
-  width: 408px;
-  height: auto;
-}
-
-/* ==================================================
-   PORTFOLIO KATEGORIER
-================================================== */
-
-.portfolio-categories {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
-  margin-top: 150px;
-}
-
-.portfolio-category-dark,
-.portfolio-category-light {
-  display: inline-block;
-
-  padding: 12px 20px;
-
-  font-size: 12px;
-  font-weight: 700;
-
-  color: white;
-}
-
-/* Mørk pink først */
-
-.portfolio-category-dark {
-  background-color: var(--pink);
-}
-
-/* Lyserød bagefter */
-
-.portfolio-category-light {
-  background-color: var(--light-pink);
-}
-
-/* ==================================================
-   CAROUSEL 2 – FRITID
-================================================== */
-
-.portfolio-carousel-2 {
-  background-color: var(--grey);
-  padding: 0 1% 80px;
-}
-
-/* VINDUE */
-
-.carousel-window-2 {
-  position: relative;
-  width: 100%;
-  max-width: 1400px;
-  overflow: hidden;
-}
-
-/* RÆKKE */
-
-.carousel-track-2 {
-  display: flex;
-  align-items: center;
-  transition: transform 0.5s ease;
-  will-change: transform;
-}
-
-/* KORT */
-
-.portfolio-card-2 {
-  min-width: 60%;
-  flex-shrink: 0;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 15px 5% 30px;
-
-  transform: scale(0.72);
-  transition: transform 0.5s ease;
-}
-
-/* MIDTERSTE */
-
-.portfolio-card-2.active {
-  transform: scale(1);
-}
-
-/* BILLEDER */
-
-.portfolio-card-2 .portfolio-image {
-  width: 100%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.portfolio-card-2 .portfolio-image img,
-.portfolio-card-2 .portfolio-image video {
-  display: block;
-
-  width: 100%;
-  max-width: 820px;
-  max-height: 600px;
-
-  height: auto;
-
-  object-fit: contain;
-
-  cursor: pointer;
-}
-
-/* VIDEO */
-
-.portfolio-card-2 .portfolio-image video {
-  pointer-events: none;
-}
-
-/* PILE */
-
-.carousel-prev-2 {
-  left: 20%;
-}
-
-.carousel-next-2 {
-  right: 20%;
-}
-
-/* MOBIL */
-
-@media (max-width: 800px) {
-  .portfolio-carousel-2 {
-    padding: 0 3% 60px;
-  }
-
-  .portfolio-card-2 {
-    min-width: 60%;
-    padding: 20px 7%;
-  }
-}
-
-@media (max-width: 550px) {
-  .portfolio-carousel-2 {
-    padding-bottom: 50px;
-  }
-
-  .portfolio-card-2 {
-    min-width: 80%;
-  }
-}
-
-/* ==================================================
-   KATEGORIER TIL CAROUSEL 2
-================================================== */
-
-.portfolio-categories-2 {
-  display: flex;
-
-  justify-content: flex-end;
-  align-items: center;
-
-  gap: 10px;
-
-  width: 100%;
-
-  margin-top: 100px;
-  margin-bottom: 25px;
-
-  padding-right: 5.5%;
-}
-
-/* ==================================================
-   OM MIG – HEADER
-================================================== */
-
-.about-hero {
-  background-color: var(--grey);
-
-  min-height: 650px;
-
-  padding: 0;
-
-  display: grid;
-
-  grid-template-columns: 70% 30%;
-
-  align-items: end;
-
-  overflow: hidden;
-}
-
-.about-hero-text {
-  padding-bottom: 100px;
-}
-
-.about-hero-text h1 {
-  margin: 0;
-
-  font-size: clamp(65px, 7vw, 115px);
-
-  line-height: 0.9;
-
-  font-weight: 300;
-
-  letter-spacing: -4px;
-
-  color: var(--p);
-}
-
-.about-hero-text h2 {
-  margin: 15px 0 0;
-
-  font-size: clamp(25px, 3vw, 42px);
-
-  line-height: 1;
-
-  font-weight: 700;
-
-  letter-spacing: -1.5px;
-
-  color: var(--pink);
-}
-
-.about-hero-image {
-  display: flex;
-
-  justify-content: flex-start;
-
-  align-items: flex-end;
-
-  height: 100%;
-}
-
-.about-hero-image img {
-  display: block;
-
-  width: 80%;
-
-  max-width: none;
-
-  height: auto;
-  transform: translateX(-15%);
-}
-
-/* ANNSOFIE-BILLEDE */
-
-.annsofie-image {
-  justify-content: flex-start;
-}
-
-.annsofie-image img {
-  width: 230%;
-  max-width: none;
-  height: auto;
-  transform: translate(-59%, -400px);
-}
-
-/* ==================================================
-   OM MIG – GENERELLE SEKTIONER
-================================================== */
-
-.about-section {
-  background-color: var(--grey);
-
-  width: 100%;
-
-  padding: 90px 8%;
-
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: flex-start;
-
-  gap: 30px;
-}
-
-/* Overskriftsbokse */
-
-.about-heading {
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: flex-start;
-}
-
-.about-heading h2,
-.about-heading h3 {
-  margin: 0;
-
-  color: white;
-
-  font-weight: 700;
-
-  line-height: 1;
-}
-
-.about-heading h2 {
-  background-color: var(--light-pink);
-
-  padding: 9px 15px;
-
-  font-size: 18px;
-}
-
-.about-heading h3 {
-  background-color: var(--pink);
-
-  padding: 9px 15px;
-
-  font-size: 18px;
-}
-
-/* Brødtekst */
-
-.about-text {
-  width: 100%;
-
-  max-width: none;
-}
-
-.about-text p {
-  width: 100%;
-
-  font-size: 14px;
-
-  line-height: 1.6;
-
-  margin: 0 0 22px;
-}
-
-/* ==================================================
-   FUN FACT
-================================================== */
-
-.fun-fact {
-  background-color: var(--grey);
-
-  width: 100%;
-
-  padding: 90px 8% 100px;
-}
-
-/* Overskrift */
-
-.fun-fact-heading {
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: flex-start;
-
-  margin-bottom: 45px;
-}
-
-.fun-fact-heading h2,
-.fun-fact-heading h3 {
-  margin: 0;
-
-  color: white;
-
-  font-weight: 700;
-
-  line-height: 1;
-}
-
-.fun-fact-heading h2 {
-  background-color: var(--pink);
-
-  padding: 10px 16px;
-
-  font-size: 22px;
-}
-
-.fun-fact-heading h3 {
-  background-color: var(--dark);
-
-  padding: 10px 16px;
-
-  font-size: 22px;
-}
-
-/* Tekst + Tyson */
-
-.fun-fact-content {
-  width: 100%;
-
-  display: grid;
-
-  grid-template-columns: 60% 40%;
-
-  align-items: end;
-
-  gap: 30px;
-}
-
-.fun-fact-text {
-  width: 100%;
-
-  max-width: none;
-
-  padding-bottom: 70px;
-}
-
-.fun-fact-text p {
-  font-size: 14px;
-
-  line-height: 1.6;
-
-  margin: 0 0 22px;
-}
-
-.fun-fact-image {
-  display: flex;
-
-  justify-content: flex-end;
-
-  align-items: flex-end;
-}
-
-.fun-fact-image img {
-  display: block;
-
-  width: 100%;
-
-  max-width: 500px;
-
-  height: auto;
-}
-
-/* ==================================================
-   OM MIG – TABLET
-================================================== */
-
-@media (max-width: 800px) {
-  .about-hero {
-    min-height: 500px;
-    grid-template-columns: 1fr 1fr;
-    padding: 0;
-  }
-
-  .about-hero-text {
-    padding-bottom: 70px;
-  }
-
-  .about-section {
-    padding: 80px 7%;
-
-    gap: 50px;
-  }
-
-  .fun-fact {
-    padding-left: 7%;
-
-    padding-right: 7%;
-  }
-}
-
-/* ==================================================
-   OM MIG – MOBIL
-================================================== */
-
-@media (max-width: 550px) {
-  .about-hero {
-    min-height: auto;
-    grid-template-columns: 1fr;
-    padding: 0;
-  }
-
-  .about-hero-image {
-    order: 1;
-
-    justify-content: flex-start;
-  }
-
-  .about-hero-image img {
-    width: 90%;
-
-    max-width: 450px;
-  }
-
-  .about-hero-box {
-    order: 2;
-
-    padding: 40px 8%;
-  }
-
-  .about-hero-box h1 {
-    font-size: 28px;
-  }
-
-  .about-hero-box h2 {
-    font-size: 19px;
-  }
-
-  .about-section {
-    grid-template-columns: 1fr;
-
-    gap: 35px;
-
-    padding: 65px 8%;
-  }
-
-  .soft-skills .about-text {
-    order: 2;
-  }
-
-  .soft-skills .about-heading {
-    order: 1;
-
-    align-items: flex-start;
-  }
-
-  .fun-fact {
-    padding: 65px 8% 60px;
-  }
-
-  .fun-fact-content {
-    grid-template-columns: 1fr;
-
-    gap: 20px;
-  }
-
-  .fun-fact-text {
-    padding-bottom: 20px;
-  }
-
-  .fun-fact-image {
-    justify-content: center;
-  }
-
-  .fun-fact-image img {
-    width: 90%;
+    letter-spacing: -0.07em;
   }
 }

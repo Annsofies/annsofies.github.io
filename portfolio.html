@@ -6,24 +6,18 @@
 
     <title>Portfolio – Ann-Sofie Solsbæk</title>
 
-    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/style.css" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
-
-    <link rel="stylesheet" href="css/style.css" />
   </head>
 
-  <body>
-    <!-- ==================================================
-         NAVBAR
-    ================================================== -->
-
-    <header class="navbar">
+  <body class="page-portfolio">
+    <header class="navbar" id="navbar">
       <a href="index.html" class="logo-container">
         <img src="img/logo.png" alt="Ann-Sofie Solsbæk logo" />
-
         <span>ANN-SOFIE SOLSBÆK</span>
       </a>
 
@@ -32,10 +26,10 @@
 
         <a href="om-mig.html" class="nav-link"> OM MIG </a>
 
-        <button class="nav-link" id="contactButton">KONTAKT</button>
+        <button class="nav-link contact-button" id="contactButton">
+          KONTAKT
+        </button>
       </nav>
-
-      <!-- KONTAKTBOKS -->
 
       <div class="contact-box" id="contactBox">
         <a href="mailto:annsofiesolsbaek@gmail.com">
@@ -43,255 +37,350 @@
         </a>
 
         <div class="contact-icons">
-          <a
-            href="www.linkedin.com/in/ann-sofie-solsbæk-339b58206"
-            aria-label="LinkedIn"
-          >
+          <a href="#" aria-label="LinkedIn">
             <i class="fa-brands fa-linkedin-in"></i>
           </a>
 
-          <a
-            href="https://wa.me/45DITTELEFONNUMMER?text=Hej%20Ann-Sofie%2C%20jeg%20har%20set%20dit%20portfolio!"
-            aria-label="WhatsApp"
-            target="_blank"
-          >
+          <a href="#" aria-label="WhatsApp">
             <i class="fa-brands fa-whatsapp"></i>
           </a>
 
-          <button id="closeContact" class="close-contact">×</button>
+          <button
+            class="close-contact"
+            id="closeContact"
+            aria-label="Luk kontakt"
+          >
+            ×
+          </button>
         </div>
       </div>
     </header>
 
     <main>
       <!-- ==================================================
-             PORTFOLIO INTRO
-        ================================================== -->
+           PORTFOLIO LANDING
+      ================================================== -->
 
-      <section class="portfolio-hero">
-        <div class="portfolio-title">
-          <h1>PORTFOLIO</h1>
+      <section class="portfolio-new-hero" data-nav-color="#442F2A">
+        <div class="swirl swirl-one"></div>
+        <div class="swirl swirl-two"></div>
 
-          <h2>HVAD KAN HUN ENTLIG?</h2>
+        <div class="portfolio-new-title">
+          <span>creative</span>
+          <h1>portfolio</h1>
+        </div>
 
-          <div class="portfolio-categories">
-            <span class="portfolio-category-dark"> CHARACTER DESIGN </span>
+        <p>
+          fuld med og se,<br />
+          hvad jeg har arbejdet på
+        </p>
 
-            <span class="portfolio-category-light"> FRITID </span>
+        <div class="portfolio-anchor-box">
+          <a href="#elgiganten">elgigantens 30 års</a>
+          <a href="#kreakassen">kreakassen</a>
+          <a href="#character">character design</a>
+          <a href="#ovartaci">museum ovartaci</a>
+          <a href="#storcenter">storcenter nord</a>
+          <a href="#kasper">kaspers instagram</a>
+        </div>
+      </section>
+
+      <!-- ==================================================
+           ELGIGANTEN
+      ================================================== -->
+
+      <section
+        class="case-section case-blue"
+        id="elgiganten"
+        data-nav-color="#D3E3E0"
+      >
+        <div class="case-heading">
+          <h2>elgigantens 30 års</h2>
+          <span class="handwritten">plakat</span>
+        </div>
+
+        <div class="case-grid">
+          <div class="case-media two-images">
+            <div class="placeholder case-image-tall">ELGIGANTEN PLAKAT</div>
+
+            <div class="placeholder case-image-tall">EKSTRA BILLEDE</div>
+          </div>
+
+          <div class="case-text">
+            <p>
+              I forbindelse med Elgigantens 30 års fødselsdag designede jeg en
+              plakat til butikken i Viby J.
+            </p>
+
+            <p>
+              Plakaten skulle skabe blikfang, passe til Elgigantens visuelle
+              udtryk og samtidig formidle budskabet om butikkens
+              fødselsdagsfejring på en måde som matcher brandets visuelle stil.
+            </p>
+
+            <button class="project-popup-button" data-popup="elgiganten">
+              Læs mere om projektet <strong>her</strong>
+            </button>
           </div>
         </div>
       </section>
 
       <!-- ==================================================
-            CAROUSEL
-        ================================================== -->
+           KREAKASSEN
+      ================================================== -->
 
-     <section class="portfolio-carousel">
-
-  <div class="carousel-window">
-
-    <div class="carousel-track" id="carouselTrack">
-
-      <!-- KOPI AF KASPER TIL LOOP -->
-      <article class="portfolio-card">
-        <div class="portfolio-image">
-          <img src="img/kasper.png" alt="Character design">
+      <section
+        class="case-section case-pink"
+        id="kreakassen"
+        data-nav-color="#E497B5"
+      >
+        <div class="case-heading case-heading-right">
+          <h2>kreakassen.dk</h2>
+          <span class="handwritten">wordpress skole case</span>
         </div>
-      </article>
 
-      <!-- GIRLS -->
-      <article class="portfolio-card">
-        <div class="portfolio-image">
-          <img src="img/girls.png" alt="Character design">
+        <div class="case-grid reverse-grid">
+          <div class="case-text">
+            <p>
+              KreaKassen er en fiktiv webshop, der gør det nemmere for
+              børnefamilier at få mere kreativ samvær.
+            </p>
+
+            <p>
+              Gennem brugerresearch og personaer undersøgte vi målgruppens behov
+              og udviklede et koncept med kreative aktivitetskasser til
+              forskellige årstider og højtider.
+            </p>
+
+            <p>
+              Jeg bidrog særligt til konceptudviklingen og det visuelle udtryk.
+            </p>
+
+            <div class="case-buttons">
+              <button class="project-popup-button" data-popup="kreakassen">
+                Se vores læring <strong>her</strong>
+              </button>
+
+              <button class="project-popup-button" data-popup="kreakassen">
+                Læs mere om projektet <strong>her</strong>
+              </button>
+            </div>
+          </div>
+
+          <div class="case-media">
+            <div class="placeholder case-image-wide">KREAKASSEN WEBSITE</div>
+          </div>
         </div>
-      </article>
-
-      <!-- MIG -->
-      <article class="portfolio-card">
-        <div class="portfolio-image">
-          <img src="img/mig.png" alt="Character design">
-        </div>
-      </article>
-
-      <!-- SAIFU -->
-      <article class="portfolio-card">
-        <div class="portfolio-image">
-          <img src="img/saifu.png" alt="Character design">
-        </div>
-      </article>
-
-      <!-- WORKMIG -->
-      <article class="portfolio-card">
-        <div class="portfolio-image">
-          <img src="img/workmig.png" alt="Character design">
-        </div>
-      </article>
-
-      <!-- KASPER -->
-      <article class="portfolio-card">
-        <div class="portfolio-image">
-          <img src="img/kasper.png" alt="Character design">
-        </div>
-      </article>
-
-      <!-- KOPI AF GIRLS TIL LOOP -->
-      <article class="portfolio-card">
-        <div class="portfolio-image">
-          <img src="img/girls.png" alt="Character design">
-        </div>
-      </article>
-
-    </div>
-
-    <!-- PILENE -->
-    <button
-      class="carousel-arrow carousel-prev"
-      id="prevProject"
-      aria-label="Forrige billede"
-    >
-      ←
-    </button>
-
-    <button
-      class="carousel-arrow carousel-next"
-      id="nextProject"
-      aria-label="Næste billede"
-    >
-      →
-    </button>
-
-  </div>
-
-</section>
-
-        <!-- ==================================================
-     CAROUSEL 2 – SKOLE
-================================================== -->
-
-<div class="portfolio-categories portfolio-categories-2">
-  <span class="portfolio-category-dark">ADOOBE</span>
-  <span class="portfolio-category-light">SKOLE</span>
-</div>
-
-<section class="portfolio-carousel portfolio-carousel-2">
-
-  <div class="carousel-window carousel-window-2">
-
-    <div class="carousel-track carousel-track-2" id="carouselTrack2">
-
-      <!-- KOPI AF VANDMAND TIL LOOP -->
-      <article class="portfolio-card portfolio-card-2">
-        <div class="portfolio-image">
-          <img src="img/vandman.png" alt="Illustration af vandmand">
-        </div>
-      </article>
-
-      <!-- KAFFE TYSON -->
-      <article class="portfolio-card portfolio-card-2">
-        <div class="portfolio-image">
-          <img src="img/kaffetyson.gif" alt="Kaffetyson animation">
-        </div>
-      </article>
-
-      <!-- PEPPER GHOST -->
-      <article class="portfolio-card portfolio-card-2">
-        <div class="portfolio-image">
-          <video
-            src="video/peppergohst.mp4"
-            autoplay
-            muted
-            loop
-            playsinline
-          ></video>
-        </div>
-      </article>
-
-      <!-- PINK CAR -->
-      <article class="portfolio-card portfolio-card-2">
-        <div class="portfolio-image">
-          <img src="img/pinkcar.png" alt="Pink bil illustration">
-        </div>
-      </article>
-
-      <!-- POLAROID -->
-      <article class="portfolio-card portfolio-card-2">
-        <div class="portfolio-image">
-          <img src="img/polaroid.gif" alt="Polaroid animation">
-        </div>
-      </article>
-
-      <!-- VANDMAND -->
-      <article class="portfolio-card portfolio-card-2">
-        <div class="portfolio-image">
-          <img src="img/vandman.png" alt="Illustration af vandmand">
-        </div>
-      </article>
-
-      <!-- KOPI AF KAFFE TYSON TIL LOOP -->
-      <article class="portfolio-card portfolio-card-2">
-        <div class="portfolio-image">
-          <img src="img/kaffetyson.gif" alt="Kaffetyson animation">
-        </div>
-      </article>
-
-    </div>
-
-    <!-- PILENE -->
-    <button
-      class="carousel-arrow carousel-prev carousel-prev-2"
-      id="prevProject2"
-      aria-label="Forrige billede"
-    >
-      ←
-    </button>
-
-    <button
-      class="carousel-arrow carousel-next carousel-next-2"
-      id="nextProject2"
-      aria-label="Næste billede"
-    >
-      →
-    </button>
-
-  </div>
-
-</section>
+      </section>
 
       <!-- ==================================================
-             HARD SKILLS
-        ================================================== -->
-      <section class="hard-skills">
-        <!-- Overgang øverst -->
-        <div class="hard-skills-transition">
-          <img src="img/overgang2.png" alt="" />
+           CHARACTER DESIGN
+      ================================================== -->
+
+      <section
+        class="case-section case-brown"
+        id="character"
+        data-nav-color="#442F2A"
+      >
+        <div class="case-heading">
+          <h2>character design</h2>
+          <span class="handwritten">fritid</span>
         </div>
 
-        <!-- Hvid boks -->
-        <div class="hard-skills-box">
-          <div class="hard-skills-content">
-            <h2>
-              HARD,<br />
-              <span>SKILLS</span>
-            </h2>
-
+        <div class="case-grid">
+          <div class="case-media">
             <img
-              src="img/hardskills.png"
-              alt="Hard skills"
-              class="hardskills-image"
+              src="img/girls.png"
+              alt="Eksempel på character design"
+              class="case-real-image"
             />
           </div>
 
-          <!-- GIF / video til højre -->
-          <div class="mig">
-            <video src="video/mig.mp4" autoplay muted loop playsinline></video>
+          <div class="case-text">
+            <p>
+              I min fritid kan jeg godt lide at tegne mennesker på sjove og
+              anderledes måder – og derefter udvikle dem til karakterdesigns.
+            </p>
+
+            <p>
+              Jeg synes, det er spændende at give hver karakter sit eget udtryk,
+              personlighed og små detaljer.
+            </p>
+
+            <button class="project-popup-button" data-popup="character">
+              Læs om min proces <strong>her</strong>
+            </button>
           </div>
+        </div>
+      </section>
+
+      <!-- ==================================================
+           OVARTACI
+      ================================================== -->
+
+      <section
+        class="case-section case-beige"
+        id="ovartaci"
+        data-nav-color="#EFE7DA"
+      >
+        <div class="case-heading case-heading-right">
+          <h2>museum ovartaci</h2>
+          <span class="handwritten">skole case</span>
+        </div>
+
+        <div class="case-grid">
+          <div class="case-text">
+            <p>
+              Museum Ovartaci var et projekt, hvor opgaven var at udvikle en
+              digital og interaktiv løsning som et ekstra lag til den fysiske
+              udstilling.
+            </p>
+
+            <p>
+              Her arbejdede vi med UX, interaktionsdesign, brugercentreret
+              design samt udvikling i HTML, CSS og JavaScript.
+            </p>
+
+            <p>
+              Jeg lærte blandt andet hvor svært det er at formidle et budskab
+              klart gennem design og arbejde med brugerfeedback.
+            </p>
+
+            <button class="project-popup-button" data-popup="ovartaci">
+              Læs om min proces <strong>her</strong>
+            </button>
+          </div>
+
+          <div class="case-media image-row">
+            <div class="placeholder case-image-tall">OVARTACI WEBSITE</div>
+
+            <img
+              src="img/ovi.png"
+              alt="Museum Ovartaci plakat"
+              class="case-real-image case-poster"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================
+           STORCENTER NORD
+      ================================================== -->
+
+      <section
+        class="case-section case-blue"
+        id="storcenter"
+        data-nav-color="#D3E3E0"
+      >
+        <div class="case-heading">
+          <h2>storcenter nord</h2>
+          <span class="handwritten"> interaktiv touchskærm skole case </span>
+        </div>
+
+        <div class="case-grid">
+          <div class="case-media">
+            <img
+              src="img/flyer.png"
+              alt="Storcenter Nord projekt"
+              class="case-real-image"
+            />
+          </div>
+
+          <div class="case-text">
+            <p>
+              Storcenter Nord akvariet var et projekt, hvor vi skulle udvikle et
+              bud på en mere spændende og interaktiv oplevelse til den
+              eksisterende touchskærm.
+            </p>
+
+            <p>
+              Vi skulle desuden udarbejde en flyer som brugeren kunne tage med
+              sig efter besøget.
+            </p>
+
+            <p>
+              Jeg arbejdede med event-baseret JavaScript og fik mere erfaring
+              med at kombinere UX/UI og multimediale løsninger.
+            </p>
+
+            <div class="case-buttons">
+              <button class="project-popup-button" data-popup="storcenter">
+                Se vores idé <strong>her</strong>
+              </button>
+
+              <button class="project-popup-button" data-popup="storcenter">
+                Læs mere om projektet <strong>her</strong>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================
+           KASPERS INSTAGRAM
+      ================================================== -->
+
+      <section
+        class="case-section case-beige"
+        id="kasper"
+        data-nav-color="#EFE7DA"
+      >
+        <div class="case-heading case-heading-right">
+          <h2>kaspers instagram</h2>
+          <span class="handwritten"> fritidsprojekt med bror </span>
+        </div>
+
+        <div class="case-text-full">
+          <p>
+            Min lillebror er cykelrytter, og sammen har vi et lille fælles
+            fritidsprojekt med hans Instagram.
+          </p>
+
+          <p>
+            Sammen synes vi, det er sjovt at filme og dokumentere hans ture og
+            løb – og så redigerer jeg dem sammen til små reels, vi kan se
+            tilbage på.
+          </p>
+
+          <p>
+            Det er ikke noget, jeg er ekspert i, men jeg synes det er sjovt at
+            klippe vores videoer sammen og derefter se hans venner og
+            cykelkammerater kommentere på det.
+          </p>
+
+          <button class="project-popup-button" data-popup="kasper">
+            Se min brors Instagram <strong>her</strong>
+          </button>
+        </div>
+
+        <div class="instagram-grid">
+          <div class="placeholder">REEL 1</div>
+          <div class="placeholder">REEL 2</div>
+          <div class="placeholder">REEL 3</div>
+          <div class="placeholder">REEL 4</div>
+          <div class="placeholder">REEL 5</div>
         </div>
       </section>
     </main>
 
     <!-- ==================================================
-         FOOTER
+         POPUP
     ================================================== -->
+
+    <div class="project-popup" id="projectPopup" aria-hidden="true">
+      <div
+        class="project-popup-box"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="popupTitle"
+      >
+        <button class="popup-close" id="popupClose" aria-label="Luk popup">
+          ×
+        </button>
+
+        <div id="popupContent"></div>
+      </div>
+    </div>
 
     <footer class="footer">
       <h2>
@@ -301,7 +390,6 @@
 
       <div class="footer-info">
         <p>Ann-Sofie Solsbæk</p>
-
         <p>Erhvervsakademi Aarhus – Multimediedesign</p>
       </div>
 
@@ -309,27 +397,19 @@
         <p>Kontakt mig her</p>
 
         <div class="footer-icons">
-          <a
-            href="https://wa.me/45DITTELEFONNUMMER?text=Hej%20Ann-Sofie%2C%20jeg%20har%20set%20dit%20portfolio!"
-            target="_blank"
-            aria-label="WhatsApp"
-          >
+          <a href="#" aria-label="WhatsApp">
             <i class="fa-brands fa-whatsapp"></i>
           </a>
 
-          <a href="mailto:dinmail@email.dk" aria-label="Email">
+          <a href="mailto:annsofiesolsbaek@gmail.com" aria-label="Email">
             <i class="fa-solid fa-envelope"></i>
           </a>
 
-          <a
-            href="www.linkedin.com/in/ann-sofie-solsbæk-339b58206"
-            target="_blank"
-            aria-label="LinkedIn"
-          >
+          <a href="#" aria-label="LinkedIn">
             <i class="fa-brands fa-linkedin-in"></i>
           </a>
 
-          <a href="#" target="_blank" aria-label="Instagram">
+          <a href="#" aria-label="Instagram">
             <i class="fa-brands fa-instagram"></i>
           </a>
         </div>

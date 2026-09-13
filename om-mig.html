@@ -2,68 +2,47 @@
 <html lang="da">
   <head>
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Om mig – Ann-Sofie Solsbæk</title>
 
-    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/style.css" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css" />
   </head>
 
-  <body>
-    <!-- ==================================================
-         NAVBAR
-    ================================================== -->
-
-    <header class="navbar">
-      <!-- LOGO -->
-
+  <body class="page-about">
+    <header class="navbar" id="navbar">
       <a href="index.html" class="logo-container">
         <img src="img/logo.png" alt="Ann-Sofie Solsbæk logo" />
-
-        <span> ANN-SOFIE SOLSBÆK </span>
+        <span>ANN-SOFIE SOLSBÆK</span>
       </a>
 
-      <!-- NAVIGATION -->
-
       <nav class="nav-menu">
-        <a href="portfolio.html" class="nav-link"> PORTFOLIO </a>
+        <a href="portfolio.html" class="nav-link">PORTFOLIO</a>
+        <a href="om-mig.html" class="nav-link active">OM MIG</a>
 
-        <a href="om-mig.html" class="nav-link active"> OM MIG </a>
-
-        <button class="nav-link" id="contactButton">KONTAKT</button>
+        <button class="nav-link contact-button" id="contactButton">
+          KONTAKT
+        </button>
       </nav>
 
-      <!-- ==================================================
-             KONTAKTBOKS
-        ================================================== -->
-
       <div class="contact-box" id="contactBox">
-        <a href="mailto:annsofiesolsbaek@gmail.dk">
-          annsofiesolsbaek@gmail.dk
+        <a href="mailto:annsofiesolsbaek@gmail.com">
+          annsofiesolsbaek@gmail.com
         </a>
 
         <div class="contact-icons">
-          <!-- LINKEDIN -->
-
-          <a href="#" target="_blank" aria-label="LinkedIn">
+          <a href="#" aria-label="LinkedIn">
             <i class="fa-brands fa-linkedin-in"></i>
           </a>
 
-          <!-- WHATSAPP -->
-
-          <a href="#" target="_blank" aria-label="WhatsApp">
+          <a href="#" aria-label="WhatsApp">
             <i class="fa-brands fa-whatsapp"></i>
           </a>
-
-          <!-- LUK -->
 
           <button
             class="close-contact"
@@ -78,95 +57,68 @@
 
     <main>
       <!-- ==================================================
-             OM MIG HEADER
-        ================================================== -->
+           OM MIG INTRO
+      ================================================== -->
 
-      <section class="about-hero">
-        <div class="about-hero-image">
-          <img src="img/ommig.png" alt="Ann-Sofie Solsbæk" />
+      <section class="about-new-hero" data-nav-color="#EFE7DA">
+        <div class="about-new-image">
+          <img src="img/portrait.jpeg" alt="Portræt af Ann-Sofie" />
         </div>
 
-        <div class="about-hero-image annsofie-image">
-          <img src="img/annsofie.png" alt="Ann-Sofie Solsbæk" />
-        </div>
-      </section>
+        <div class="about-new-text">
+          <div class="about-title-wrap">
+            <span class="handwritten">Ann-Sofie</span>
+            <h1>om mig</h1>
+          </div>
 
-      <!-- ==================================================
-             BASIC KNOWLEDGE
-        ================================================== -->
-
-      <section class="about-section basic-knowledge">
-        <!-- OVERSKRIFT -->
-
-        <div class="about-heading">
-          <h2>FRITID</h2>
-
-          <h3>BASIC KNOWLEDGE</h3>
-        </div>
-
-        <!-- TEKST -->
-
-        <div class="about-text">
           <p>
-            Mit navn er Ann-Sofie Solsbæk, jeg er 23 år, lever med adhd og er
+            Mit navn er Ann-Sofie Solsbæk, jeg er 23 år, lever med ADHD og er
             bosat i Aarhus N.
           </p>
+
           <p>
             I min fritid arbejder jeg i Elgiganten, hvor jeg har været de sidste
-            7 år. Ellers bruger jeg størstedelen af min fritid på min hund
-            Tyson, mine venner og veninder.
+            7 år, ellers bruger jeg størstedelen af min fritid på min hund
+            Tyson, min familie, venner og veninder.
           </p>
+
           <p>
-            Lige nu studerer jeg til Multimedie Designer på Erhvervsakademiet
-            Aarhus, og er færdig sommer 2027.
+            Jeg vil beskrive mig selv som en usleben diamant, som har brug for
+            en der kan forme og gøre mig klar til det store marked.
           </p>
+
+          <div class="about-buttons">
+            <a href="#" class="about-button"> Læs mit CV her </a>
+
+            <a href="#" class="about-button"> Læs mit soft skill CV her </a>
+          </div>
         </div>
       </section>
 
       <!-- ==================================================
-             SOFT SKILLS
-        ================================================== -->
+           BILLEDE
+      ================================================== -->
 
-      <section class="about-section soft-skills">
-        <!-- OVERSKRIFT -->
-
-        <div class="about-heading">
-          <h2>OM MIG</h2>
-
-          <h3>SOFT SKILLS</h3>
-        </div>
-
-        <!-- TEKST -->
-
-        <div class="about-text">
-          <p>
-            Igennem mit arbejde i Elgiganten, har jeg været på flere lederkurser
-            og stået for en del personaleansvar, hvilket har givet mig erfaring
-            med ansvar, samarbejde og ledelse.
-          </p>
-
-          <p>
-            Jeg arbejder struktureret og trives med at samarbejde med andre om
-            kreative løsninger.
-          </p>
+      <section class="about-photo-section" data-nav-color="#EFE7DA">
+        <div class="about-big-photo">
+          <div class="placeholder large-placeholder">
+            BILLEDE AF MIG OG TYSON
+          </div>
         </div>
       </section>
 
       <!-- ==================================================
-             FUN FACT
-        ================================================== -->
+           FUN FACT
+      ================================================== -->
 
-      <section class="fun-fact">
-        <!-- OVERSKRIFT -->
-
-        <div class="fun-fact-heading">
-          <h2>FUN FACT</h2>
-
-          <h3>OM MIG</h3>
+      <section class="about-funfact-new" data-nav-color="#442F2A">
+        <div class="about-funfact-title">
+          <h2>fun fact</h2>
+          <span class="handwritten">om mig selvfølgelig</span>
         </div>
 
-        <div class="fun-fact-content">
-          <div class="fun-fact-text">
+        <div class="about-funfact-grid">
+          <div class="about-funfact-text">
             <p>
               Jeg elsker hunde, og en af mine drømme er at arbejde med hunde på
               den ene eller anden måde, når jeg bliver ældre...
@@ -178,74 +130,51 @@
             </p>
 
             <p>
-              Ham har vi lavet en Instagramprofil til ham ved navn
-              @tigertyson_staffy – den bruger jeg som et digitalt fotoalbum,
-              hvor både mig og 600+ andre følger hans opvækst &lt;3
+              Ham har vi lavet en Instagramprofil til ved navn
+              @tigertyson_staffy. Den bruger jeg som et digitalt fotoalbum, hvor
+              både mig og 600+ andre følger hans opvækst &lt;3
             </p>
           </div>
 
-          <!-- TYSON BILLEDER -->
-
-          <div class="fun-fact-image">
-            <img src="img/tysonpol.png" alt="Tyson" />
+          <div class="about-funfact-image">
+            <img src="img/tysonpol.png" alt="Polaroidbilleder af Tyson" />
           </div>
         </div>
       </section>
     </main>
 
-    <!-- ==================================================
-         FOOTER
-    ================================================== -->
-
     <footer class="footer">
-      <!-- FOOTER OVERSKRIFT -->
-
       <h2>
         MULTIMEDIEDESIGN<br />
         PORTFOLIO
       </h2>
 
-      <!-- INFO -->
-
       <div class="footer-info">
         <p>Ann-Sofie Solsbæk</p>
-
         <p>Erhvervsakademi Aarhus – Multimediedesign</p>
       </div>
-
-      <!-- KONTAKT -->
 
       <div class="footer-contact">
         <p>Kontakt mig her</p>
 
         <div class="footer-icons">
-          <!-- WHATSAPP -->
-
-          <a href="#" target="_blank" aria-label="WhatsApp">
+          <a href="#" aria-label="WhatsApp">
             <i class="fa-brands fa-whatsapp"></i>
           </a>
 
-          <!-- EMAIL -->
-
-          <a href="mailto:annsofiesolsbaek@gmail.dk" aria-label="Gmail">
+          <a href="mailto:annsofiesolsbaek@gmail.com" aria-label="Email">
             <i class="fa-solid fa-envelope"></i>
           </a>
 
-          <!-- LINKEDIN -->
-
-          <a href="#" target="_blank" aria-label="LinkedIn">
+          <a href="#" aria-label="LinkedIn">
             <i class="fa-brands fa-linkedin-in"></i>
           </a>
 
-          <!-- INSTAGRAM -->
-
-          <a href="#" target="_blank" aria-label="Instagram">
+          <a href="#" aria-label="Instagram">
             <i class="fa-brands fa-instagram"></i>
           </a>
         </div>
       </div>
-
-      <!-- COPYRIGHT -->
 
       <p class="copyright">
         Copyright © 2026 Ann-Sofie Solsbæk – Alle rettigheder forbeholdes

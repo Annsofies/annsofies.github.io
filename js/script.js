@@ -1,21 +1,29 @@
+// ==================================================
+// KONTAKTBOKS
+// ==================================================
+
 const contactButton = document.getElementById("contactButton");
 const contactBox = document.getElementById("contactBox");
 const closeContact = document.getElementById("closeContact");
 
-// Åbn kontaktboksen
-contactButton.addEventListener("click", function (event) {
-  event.stopPropagation();
+if (contactButton && contactBox) {
+  contactButton.addEventListener("click", function (event) {
+    event.stopPropagation();
+    contactBox.classList.toggle("show");
+  });
+}
 
-  contactBox.classList.toggle("show");
-});
+if (closeContact && contactBox) {
+  closeContact.addEventListener("click", function () {
+    contactBox.classList.remove("show");
+  });
+}
 
-// Luk med X
-closeContact.addEventListener("click", function () {
-  contactBox.classList.remove("show");
-});
-
-// Luk hvis man klikker udenfor
 document.addEventListener("click", function (event) {
+  if (!contactBox || !contactButton) {
+    return;
+  }
+
   if (
     !contactBox.contains(event.target) &&
     !contactButton.contains(event.target)
@@ -25,281 +33,218 @@ document.addEventListener("click", function (event) {
 });
 
 // ==================================================
-// PORTFOLIO CAROUSEL
-// ==================================================
-// ==================================================
-// PORTFOLIO CAROUSEL
+// NAVBAR SKIFTER FARVE EFTER SEKTION
 // ==================================================
 
-const carouselTrack = document.getElementById("carouselTrack");
+const navbar = document.getElementById("navbar");
 
-const prevProject = document.getElementById("prevProject");
+const colorSections = document.querySelectorAll("[data-nav-color]");
 
-const nextProject = document.getElementById("nextProject");
+if (navbar && colorSections.length > 0) {
+  const navObserver = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          const backgroundColor = entry.target.dataset.navColor;
 
-const projects = document.querySelectorAll(".portfolio-card");
+          const textColor = entry.target.dataset.navText;
 
-let currentProject = 1;
+          navbar.style.backgroundColor = backgroundColor;
 
-const totalProjects = 5;
+          navbar.style.color = textColor;
+        }
+      });
+    },
 
-// ==================================================
-// OPDATER CAROUSEL
-// ==================================================
+    {
+      root: null,
 
-function updateCarousel(animate = true) {
-  if (!animate) {
-    carouselTrack.style.transition = "none";
-  } else {
-    carouselTrack.style.transition = "transform 0.5s ease";
-  }
+      threshold: 0,
 
-  // Fjern active fra alle
+      rootMargin: "-70px 0px -85% 0px",
+    },
+  );
 
-  projects.forEach(function (project) {
-    project.classList.remove("active");
+  colorSections.forEach(function (section) {
+    navObserver.observe(section);
   });
-
-  // Gør det aktuelle billede aktivt
-
-  projects[currentProject].classList.add("active");
-
-  const cardWidth = projects[0].offsetWidth;
-
-  const windowWidth = document.querySelector(".carousel-window").offsetWidth;
-
-  // Flyt så det aktive kort står i midten
-
-  const move = currentProject * cardWidth - (windowWidth - cardWidth) / 2;
-
-  carouselTrack.style.transform = `translateX(-${move}px)`;
 }
 
 // ==================================================
-// HØJRE PIL
+// POPUP DATA
 // ==================================================
 
-nextProject.addEventListener("click", function () {
-  currentProject++;
+const popupData = {
+  elgiganten: {
+    title: "Elgigantens 30 års",
+    text: `
+      I forbindelse med Elgigantens 30 års fødselsdag arbejdede
+      jeg med plakatdesign til butikken i Viby J.
 
-  updateCarousel();
+      Her kan jeg senere indsætte mere om processen,
+      designvalg, typografi, farver, feedback og det færdige resultat.
+    `,
+    color: "#D3E3E0",
+    boxColor: "#C4DBD7",
+  },
 
-  // Girls-kopien → Girls
+  kreakassen: {
+    title: "KreaKassen",
+    text: `
+      KreaKassen er en skolecase, hvor vi udviklede en fiktiv webshop
+      med kreative aktivitetskasser til børn og deres forældre.
 
-  if (currentProject === totalProjects + 1) {
-    setTimeout(function () {
-      currentProject = 1;
+      Her kan jeg senere indsætte mere information om research,
+      personaer, WordPress, designvalg, brugertests og læring.
+    `,
+    color: "#E497B5",
+    boxColor: "#FFBDE2",
+  },
 
-      updateCarousel(false);
-    }, 500);
-  }
-});
+  character: {
+    title: "Character Design",
+    text: `
+      Character Design er et af mine fritidsprojekter.
 
-// ==================================================
-// VENSTRE PIL
-// ==================================================
+      Her kan jeg senere vise min proces fra referencebillede
+      til skitse og videre til den færdige karakter.
+    `,
+    color: "#442F2A",
+    boxColor: "#4F3731",
+  },
 
-prevProject.addEventListener("click", function () {
-  currentProject--;
+  ovartaci: {
+    title: "Museum Ovartaci",
+    text: `
+      Museum Ovartaci var en skolecase med fokus på en digital,
+      interaktiv oplevelse som ekstra lag til museets udstilling.
 
-  updateCarousel();
+      Her kan jeg senere indsætte billeder fra processen,
+      research, prototyper, brugertests og den færdige løsning.
+    `,
+    color: "#EFE7DA",
+    boxColor: "#EBDDCC",
+  },
 
-  // Kasper-kopien → Kasper
+  storcenter: {
+    title: "Storcenter Nord",
+    text: `
+      Storcenter Nord var en skolecase, hvor vi arbejdede med
+      den eksisterende touchskærm ved akvariet.
 
-  if (currentProject === 0) {
-    setTimeout(function () {
-      currentProject = totalProjects;
+      Her kan jeg senere indsætte mere om koncept,
+      JavaScript, designproces, flyer og brugertest.
+    `,
+    color: "#D3E3E0",
+    boxColor: "#C4DBD7",
+  },
 
-      updateCarousel(false);
-    }, 500);
-  }
-});
+  kasper: {
+    title: "Kaspers Instagram",
+    text: `
+      Et lille fælles fritidsprojekt mellem min lillebror og mig.
 
-// ==================================================
-// START PÅ GIRLS
-// ==================================================
-
-window.addEventListener("load", function () {
-  currentProject = 1;
-
-  updateCarousel(false);
-});
-
-// ==================================================
-// VED RESIZE
-// ==================================================
-
-window.addEventListener("resize", function () {
-  updateCarousel(false);
-});
-
-// ==================================================
-// PORTFOLIO CAROUSEL 2
-// ==================================================
-
-const carouselTrack2 = document.getElementById("carouselTrack2");
-
-const prevProject2 = document.getElementById("prevProject2");
-
-const nextProject2 = document.getElementById("nextProject2");
-
-const projects2 = document.querySelectorAll(".portfolio-card-2");
-
-let currentProject2 = 1;
-
-const totalProjects2 = 5;
-
-// ==================================================
-// OPDATER CAROUSEL 2
-// ==================================================
-
-function updateCarousel2(animate = true) {
-  if (!animate) {
-    carouselTrack2.style.transition = "none";
-  } else {
-    carouselTrack2.style.transition = "transform 0.5s ease";
-  }
-
-  // Fjern active fra alle
-
-  projects2.forEach(function (project) {
-    project.classList.remove("active");
-  });
-
-  // Gør aktuelt billede aktivt
-
-  projects2[currentProject2].classList.add("active");
-
-  const cardWidth = projects2[0].offsetWidth;
-
-  const windowWidth = document.querySelector(".carousel-window-2").offsetWidth;
-
-  // Flyt aktivt billede til midten
-
-  const move = currentProject2 * cardWidth - (windowWidth - cardWidth) / 2;
-
-  carouselTrack2.style.transform = `translateX(-${move}px)`;
-}
+      Her kan jeg senere indsætte eksempler på reels,
+      videoer, redigering og Instagram-indhold.
+    `,
+    color: "#EFE7DA",
+    boxColor: "#EBDDCC",
+  },
+};
 
 // ==================================================
-// HØJRE PIL
+// POPUP ELEMENTER
 // ==================================================
 
-nextProject2.addEventListener("click", function () {
-  currentProject2++;
+const popup = document.getElementById("projectPopup");
+const popupContent = document.getElementById("popupContent");
+const popupClose = document.getElementById("popupClose");
 
-  updateCarousel2();
-
-  // KAFFE TYSON-KOPI → KAFFE TYSON
-
-  if (currentProject2 === totalProjects2 + 1) {
-    setTimeout(function () {
-      currentProject2 = 1;
-
-      updateCarousel2(false);
-    }, 500);
-  }
-});
+const popupButtons = document.querySelectorAll(".project-popup-button");
 
 // ==================================================
-// VENSTRE PIL
+// ÅBN POPUP
 // ==================================================
 
-prevProject2.addEventListener("click", function () {
-  currentProject2--;
+popupButtons.forEach(function (button) {
+  button.addEventListener("click", function () {
+    const projectName = button.dataset.popup;
 
-  updateCarousel2();
+    const project = popupData[projectName];
 
-  // VANDMAND-KOPI → VANDMAND
+    if (!project || !popup || !popupContent) {
+      return;
+    }
 
-  if (currentProject2 === 0) {
-    setTimeout(function () {
-      currentProject2 = totalProjects2;
+    popupContent.innerHTML = `
+      <h2
+        class="popup-project-title"
+        id="popupTitle"
+      >
+        ${project.title}
+      </h2>
 
-      updateCarousel2(false);
-    }, 500);
-  }
-});
+      <p class="popup-project-text">
+        ${project.text}
+      </p>
 
-// ==================================================
-// START PÅ KAFFE TYSON
-// ==================================================
+      <div
+        class="placeholder popup-placeholder"
+        style="background-color: ${project.boxColor};"
+      >
+        HER KOMMER BILLEDER / CASEINDHOLD
+      </div>
+    `;
 
-window.addEventListener("load", function () {
-  currentProject2 = 1;
+    popup.querySelector(".project-popup-box").style.backgroundColor =
+      project.color;
 
-  updateCarousel2(false);
-});
+    popup.classList.add("show");
 
-// ==================================================
-// RESIZE
-// ==================================================
-
-window.addEventListener("resize", function () {
-  updateCarousel2(false);
-});
-
-// ==================================================
-// IMAGE LIGHTBOX
-// ==================================================
-
-const portfolioImages = document.querySelectorAll(".portfolio-image img");
-
-// Lav lightbox
-const imageLightbox = document.createElement("div");
-
-imageLightbox.className = "image-lightbox";
-
-imageLightbox.innerHTML = `
-  <button class="lightbox-close" aria-label="Luk billede">
-    ×
-  </button>
-
-  <img src="" alt="">
-`;
-
-document.body.appendChild(imageLightbox);
-
-// Hent elementerne
-const imageLightboxImage = imageLightbox.querySelector("img");
-
-const imageLightboxClose = imageLightbox.querySelector(".lightbox-close");
-
-// Klik på billede
-portfolioImages.forEach(function (image) {
-  image.addEventListener("click", function () {
-    imageLightboxImage.src = image.src;
-
-    imageLightboxImage.alt = image.alt;
-
-    imageLightbox.classList.add("show");
+    popup.setAttribute("aria-hidden", "false");
 
     document.body.style.overflow = "hidden";
   });
 });
 
-// Luk med X
-imageLightboxClose.addEventListener("click", function () {
-  closeImageLightbox();
-});
+// ==================================================
+// LUK POPUP
+// ==================================================
 
-// Luk ved klik udenfor
-imageLightbox.addEventListener("click", function (event) {
-  if (event.target === imageLightbox) {
-    closeImageLightbox();
+function closeProjectPopup() {
+  if (!popup) {
+    return;
   }
-});
 
-// Luk med ESC
-document.addEventListener("keydown", function (event) {
-  if (event.key === "Escape") {
-    closeImageLightbox();
-  }
-});
+  popup.classList.remove("show");
 
-// Luk lightbox
-function closeImageLightbox() {
-  imageLightbox.classList.remove("show");
+  popup.setAttribute("aria-hidden", "true");
 
   document.body.style.overflow = "";
 }
+
+if (popupClose) {
+  popupClose.addEventListener("click", closeProjectPopup);
+}
+
+if (popup) {
+  popup.addEventListener("click", function (event) {
+    if (event.target === popup) {
+      closeProjectPopup();
+    }
+  });
+}
+
+// ==================================================
+// ESC LUKKER POPUP
+// ==================================================
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    closeProjectPopup();
+
+    if (contactBox) {
+      contactBox.classList.remove("show");
+    }
+  }
+});
