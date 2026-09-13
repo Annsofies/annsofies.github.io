@@ -72,7 +72,7 @@ if (navbar && colorSections.length > 0) {
 
 const popupData = {
   elgiganten: {
-    title: "Elgigantens 30 års",
+    title: "elgigantens 30 års",
 
     text: `
       I forbindelse med Elgigantens 30 års fødselsdag arbejdede
@@ -88,7 +88,7 @@ const popupData = {
   },
 
   kreakassen: {
-    title: "KreaKassen",
+    title: "kreakassen.dk",
 
     text: `
       KreaKassen er en skolecase, hvor vi udviklede en fiktiv webshop
@@ -104,7 +104,7 @@ const popupData = {
   },
 
   character: {
-    title: "Character Design",
+    title: "character design",
 
     text: `
       Character Design er et af mine fritidsprojekter.
@@ -119,7 +119,7 @@ const popupData = {
   },
 
   ovartaci: {
-    title: "Museum Ovartaci",
+    title: "museum ovartaci",
 
     text: `
       Museum Ovartaci var en skolecase med fokus på en digital,
@@ -135,7 +135,7 @@ const popupData = {
   },
 
   storcenter: {
-    title: "Storcenter Nord",
+    title: "storcenter nord",
 
     text: `
       Storcenter Nord var en skolecase, hvor vi arbejdede med
@@ -151,7 +151,7 @@ const popupData = {
   },
 
   kasper: {
-    title: "Kaspers Instagram",
+    title: "kaspers instagram",
 
     text: `
       Et lille fælles fritidsprojekt mellem min lillebror og mig.
