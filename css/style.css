@@ -1650,6 +1650,36 @@ button {
 }
 
 /* ==================================================
+   SUSTAINABLE WEB
+================================================== */
+
+.sustainable-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.sustainable-preview img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.popup-project-images {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 35px;
+}
+
+.popup-project-images img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ==================================================
    KASPERS INSTAGRAM
 ================================================== */
 

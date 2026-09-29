@@ -150,6 +150,53 @@ const popupData = {
     textColor: "#442F2A",
   },
 
+  sustainable: {
+    title: "sustainable web",
+
+    text: `
+  <p>
+    I projektet har jeg arbejdet med at undersøge og forbedre Spilcaféens
+    spiloversigt med fokus på bæredygtighed, webtilgængelighed,
+    responsivt design og forretningspotentiale.
+  </p>
+
+  <p>
+    Gennem website audit, brugertests og forskellige testværktøjer fandt
+    jeg blandt andet problemer med tunge billeder, manglende labels,
+    uklare interaktioner og udfordringer på mobil.
+  </p>
+
+  <p>
+    På baggrund af resultaterne har jeg redesignet og optimeret siden ved
+    blandt andet at komprimere billeder til WebP, forbedre semantikken og
+    tilgængeligheden, gøre funktioner som filtrering og spilinformation
+    tydeligere samt tilpasse layoutet til forskellige skærmstørrelser.
+  </p>
+
+  <p>
+    Efterfølgende har jeg testet løsningen igen for at undersøge effekten
+    af ændringerne og sammenligne resultatet med den oprindelige løsning.
+  </p>
+
+  <p>
+    Jeg har blandt andet forbedret EcoGrader-scoren fra 40 til 62.
+    Lighthouse-scoren for Performance er forbedret fra 89 til 99,
+    mens Accessibility er forbedret fra 81 til 100.
+  </p>
+`,
+
+    images: [
+      "img/before-and-after.png",
+      "img/eco.png",
+      "img/performance.png",
+      "img/acessebility.png",
+    ],
+
+    color: "#442F2A",
+    boxColor: "#4F3731",
+    textColor: "#EFE7DA",
+  },
+
   kasper: {
     title: "kaspers instagram",
 
@@ -202,12 +249,31 @@ popupButtons.forEach(function (button) {
         ${project.text}
       </p>
 
+     ${
+       project.images
+         ? `
+      <div class="popup-project-images">
+        ${project.images
+          .map(
+            (image) => `
+              <img
+                src="${image}"
+                alt="${project.title} projektproces"
+              />
+            `,
+          )
+          .join("")}
+      </div>
+    `
+         : `
       <div
         class="placeholder popup-placeholder"
         style="background-color: ${project.boxColor};"
       >
         HER KOMMER BILLEDER / CASEINDHOLD
       </div>
+    `
+     }
     `;
 
     // Finder selve popup-boksen
