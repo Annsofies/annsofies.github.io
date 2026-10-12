@@ -1716,3 +1716,1012 @@ button {
   right: 18%;
   transform: rotate(2deg);
 }
+
+
+
+/* =========================================
+   PORTFOLIO - NY RÆKKEFØLGE
+========================================= */
+
+.page-portfolio main {
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio-new-hero { order: 0; }
+#tokyo { order: 1; }
+#prompt { order: 2; }
+#character { order: 3; }
+#elgiganten { order: 4; }
+#ovartaci { order: 5; }
+#kreakassen { order: 6; }
+#storcenter { order: 7; }
+#sustainable { order: 8; }
+#kasper { order: 9; }
+
+/* =========================================
+   TOKYO TAKEOVER
+========================================= */
+
+.case-tokyo {
+  background-color: #D3E3E0;
+  color: #442F2A;
+}
+
+#tokyo .case-heading .handwritten {
+  color: #E497B5;
+  left: 67%;
+  transform: rotate(-4deg);
+}
+
+/* =========================================
+   DEN GODE PROMPT
+========================================= */
+
+.case-prompt {
+  background-color: #E497B5;
+  color: #442F2A;
+}
+
+#prompt .case-heading h2 {
+  color: #EFE7DA;
+}
+
+#prompt .case-heading .handwritten {
+  color: #442F2A;
+  right: 28%;
+  transform: rotate(-6deg);
+}
+
+/* =========================================
+   BEGGE NYE CASES
+========================================= */
+
+#tokyo,
+#prompt {
+  overflow: hidden;
+}
+
+#tokyo .case-grid,
+#prompt .case-grid {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 45px;
+}
+
+#tokyo .case-text p,
+#prompt .case-text p {
+  font-size: clamp(16px, 1.6vw, 24px);
+  line-height: 1.3;
+  margin-bottom: 30px;
+}
+
+/* =========================================
+   KARUSEL
+========================================= */
+
+.portfolio-carousel {
+  position: relative;
+  min-width: 0;
+  padding: 35px 0;
+  overflow: hidden;
+}
+
+#tokyo .portfolio-carousel {
+  background-color: #C4DBD7;
+}
+
+#prompt .portfolio-carousel {
+  background-color: #FFBDE2;
+}
+
+.carousel-track {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  padding: 0 18%;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-track img {
+  flex: 0 0 64%;
+  width: 64%;
+  height: 350px;
+  object-fit: contain;
+  scroll-snap-align: center;
+}
+
+/* PILE */
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+
+  border: none;
+  background: transparent;
+  color: #442F2A;
+
+  font-size: 42px;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.carousel-prev {
+  left: 4px;
+}
+
+.carousel-next {
+  right: 4px;
+}
+
+.carousel-arrow:hover {
+  opacity: 0.6;
+}
+
+.carousel-arrow:focus-visible {
+  outline: 3px solid #442F2A;
+  outline-offset: 3px;
+}
+
+/* =========================================
+   TABLET OG MOBIL
+========================================= */
+
+@media (max-width: 900px) {
+  #tokyo .case-grid,
+  #prompt .case-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  #tokyo .case-text,
+  #prompt .case-text {
+    order: 1;
+  }
+
+  #tokyo .portfolio-carousel,
+  #prompt .portfolio-carousel {
+    order: 2;
+  }
+
+  #tokyo .case-heading .handwritten,
+  #prompt .case-heading .handwritten {
+    position: static;
+    display: block;
+    margin-top: 15px;
+    transform: rotate(-3deg);
+  }
+
+  .carousel-track img {
+    height: 280px;
+  }
+}
+
+@media (max-width: 600px) {
+  #tokyo .case-heading h2,
+  #prompt .case-heading h2 {
+    font-size: clamp(42px, 11vw, 65px);
+  }
+
+  #tokyo .case-text p,
+  #prompt .case-text p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .carousel-track {
+    padding: 0 12%;
+    gap: 10px;
+  }
+
+  .carousel-track img {
+    flex-basis: 76%;
+    width: 76%;
+    height: 250px;
+  }
+
+  .carousel-arrow {
+    font-size: 30px;
+  }
+}
+
+
+/* =========================================
+   RETTELSE AF NYE PORTFOLIO CASES
+========================================= */
+
+/* Fire genveje på hver række */
+.portfolio-anchor-box {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* Ens tekststørrelse som øvrige cases */
+#tokyo .case-text p,
+#prompt .case-text p {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 18px;
+}
+
+/* Karuseller */
+#tokyo .portfolio-carousel,
+#prompt .portfolio-carousel {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+
+#tokyo .carousel-track,
+#prompt .carousel-track {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  width: 100%;
+  overflow-x: auto;
+
+  padding: 20px 15%;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+#tokyo .carousel-track img,
+#prompt .carousel-track img {
+  display: block;
+  flex: 0 0 70%;
+  width: 70%;
+  height: 350px;
+
+  object-fit: contain;
+  scroll-snap-align: center;
+}
+
+/* Pile oven på billederne */
+.portfolio-carousel .carousel-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  transform: translateY(-50%);
+
+  border: none;
+  background: transparent;
+  color: #442F2A;
+
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.portfolio-carousel .carousel-prev {
+  left: 5px;
+}
+
+.portfolio-carousel .carousel-next {
+  right: 5px;
+}
+
+/* Plads til sticky navbar ved ankerlinks */
+.case-section {
+  scroll-margin-top: 75px;
+}
+
+@media (max-width: 900px) {
+  .portfolio-anchor-box {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #tokyo .case-grid,
+  #prompt .case-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .portfolio-anchor-box {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #tokyo .carousel-track img,
+  #prompt .carousel-track img {
+    height: 260px;
+  }
+}
+
+
+/* =====================================
+   TOKYO TAKEOVER - NYT KARUSEL DESIGN
+===================================== */
+
+#tokyo .portfolio-carousel,
+#prompt .portfolio-carousel {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  padding: 15px 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+/* Baggrundsfarver */
+#tokyo .portfolio-carousel {
+  background-color: #C4DBD7;
+}
+
+#prompt .portfolio-carousel {
+  background-color: #FFBDE2;
+}
+
+/* Billedrækken */
+#tokyo .carousel-track,
+#prompt .carousel-track {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  height: 100%;
+  padding: 0 20%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  box-sizing: border-box;
+}
+
+#tokyo .carousel-track::-webkit-scrollbar,
+#prompt .carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Billederne */
+#tokyo .carousel-track img,
+#prompt .carousel-track img {
+  display: block;
+  flex: 0 0 60%;
+  width: 60%;
+  height: 100%;
+  object-fit: contain;
+  transform: scale(0.75);
+  transition: transform 0.45s ease;
+  scroll-snap-align: center;
+}
+
+/* Aktivt billede bliver større */
+#tokyo .carousel-track img.active,
+#prompt .carousel-track img.active {
+  transform: scale(1);
+}
+
+/* Pile */
+#tokyo .portfolio-carousel .carousel-arrow,
+#prompt .portfolio-carousel .carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  background: transparent;
+  border: none;
+  color: #442F2A;
+  font-size: 42px;
+  cursor: pointer;
+}
+
+#tokyo .portfolio-carousel .carousel-prev,
+#prompt .portfolio-carousel .carousel-prev {
+  left: 18%;
+}
+
+#tokyo .portfolio-carousel .carousel-next,
+#prompt .portfolio-carousel .carousel-next {
+  right: 18%;
+}
+
+/* Mobil */
+@media (max-width: 600px) {
+  #tokyo .portfolio-carousel,
+  #prompt .portfolio-carousel {
+    height: 380px;
+  }
+
+  #tokyo .carousel-track,
+  #prompt .carousel-track {
+    gap: 15px;
+    padding: 0 15%;
+  }
+
+  #tokyo .carousel-track img,
+  #prompt .carousel-track img {
+    flex-basis: 70%;
+    width: 70%;
+  }
+
+  #tokyo .portfolio-carousel .carousel-prev,
+  #prompt .portfolio-carousel .carousel-prev {
+    left: 5%;
+  }
+
+  #tokyo .portfolio-carousel .carousel-next,
+  #prompt .portfolio-carousel .carousel-next {
+    right: 5%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #tokyo .carousel-track img,
+  #prompt .carousel-track img {
+    transition: none;
+  }
+}
+
+/* =====================================
+   TOKYO + PROMPT – OVERLAPPENDE KARUSEL
+===================================== */
+
+#tokyo .portfolio-carousel,
+#prompt .portfolio-carousel {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Område til billeder */
+#tokyo .carousel-track,
+#prompt .carousel-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  display: block;
+  overflow: hidden;
+  scroll-snap-type: none;
+}
+
+/* Alle billeder */
+#tokyo .carousel-track img,
+#prompt .carousel-track img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: 42%;
+  max-width: none;
+  object-fit: contain;
+  transform: translate(-50%, -50%) scale(0.85);
+  opacity: 0;
+  z-index: 1;
+  transition:
+    left 0.45s ease,
+    height 0.45s ease,
+    transform 0.45s ease,
+    opacity 0.45s ease;
+}
+
+/* Stort billede i midten */
+#tokyo .carousel-track img.is-active,
+#prompt .carousel-track img.is-active {
+  left: 50%;
+  height: 88%;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  z-index: 3;
+}
+
+/* Lille billede til venstre */
+#tokyo .carousel-track img.is-prev,
+#prompt .carousel-track img.is-prev {
+  left: 13%;
+  height: 42%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  z-index: 2;
+}
+
+/* Lille billede til højre */
+#tokyo .carousel-track img.is-next,
+#prompt .carousel-track img.is-next {
+  left: 87%;
+  height: 42%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  z-index: 2;
+}
+
+/* TEKST STARTER ØVERST */
+
+#tokyo .case-grid > *,
+#prompt .case-grid > * {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+#tokyo .case-grid > :last-child,
+#prompt .case-grid > :last-child {
+  align-self: flex-start;
+}
+
+/* PLACER PILENE UNDER BILLEDERNE */
+
+#tokyo .portfolio-carousel,
+#prompt .portfolio-carousel {
+  position: relative;
+  padding-bottom: 65px;
+  box-sizing: border-box;
+}
+
+#tokyo .portfolio-carousel .carousel-prev,
+#prompt .portfolio-carousel .carousel-prev {
+  position: absolute;
+  top: auto;
+  bottom: 12px;
+  left: calc(50% - 55px);
+  right: auto;
+  transform: none;
+  z-index: 10;
+}
+
+#tokyo .portfolio-carousel .carousel-next,
+#prompt .portfolio-carousel .carousel-next {
+  position: absolute;
+  top: auto;
+  bottom: 12px;
+  left: calc(50% + 15px);
+  right: auto;
+  transform: none;
+  z-index: 10;
+}
+
+/* Byt tekst og karusel rundt */
+#tokyo .case-grid,
+#prompt .case-grid {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+/* TOKYO – ART DIRECTION */
+
+#tokyo .case-heading {
+  position: relative !important;
+}
+
+#tokyo .case-heading .handwritten {
+  position: absolute !important;
+  right: 40% !important;
+  transform: rotate(9deg);
+  bottom: -20px !important;
+  left: auto !important;
+  top: auto !important;
+  margin: 0 !important;
+  transform: none !important;
+}
+
+/* TOKYO + PROMPT – BRUNE KARUSELPILE */
+
+#tokyo .portfolio-carousel .carousel-prev,
+#tokyo .portfolio-carousel .carousel-next,
+#prompt .portfolio-carousel .carousel-prev,
+#prompt .portfolio-carousel .carousel-next {
+  color: #442F2A;
+}
+
+
+/* =====================================
+   DEN GODE PROMPT – KARUSEL
+===================================== */
+
+#prompt .portfolio-carousel {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  padding: 0 0 65px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Billedområdet */
+#prompt .carousel-track {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  overflow: hidden;
+  scroll-snap-type: none;
+}
+
+/* Alle billeder skjules som udgangspunkt */
+#prompt .carousel-track img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: 42%;
+  max-width: none;
+  object-fit: contain;
+  opacity: 0;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  transition:
+    left 0.45s ease,
+    height 0.45s ease,
+    opacity 0.45s ease;
+}
+
+/* Stort billede i midten */
+#prompt .carousel-track img.is-active {
+  left: 50%;
+  height: 92%;
+  opacity: 1;
+  z-index: 3;
+}
+
+/* Lille billede til venstre */
+#prompt .carousel-track img.is-prev {
+  left: 12%;
+  height: 45%;
+  opacity: 1;
+  z-index: 2;
+}
+
+/* Lille billede til højre */
+#prompt .carousel-track img.is-next {
+  left: 88%;
+  height: 45%;
+  opacity: 1;
+  z-index: 2;
+}
+
+/* Pilene under billederne */
+#prompt .portfolio-carousel .carousel-prev,
+#prompt .portfolio-carousel .carousel-next {
+  position: absolute;
+  top: auto;
+  bottom: 10px;
+  transform: none;
+  color: #442F2A;
+  z-index: 10;
+}
+
+#prompt .portfolio-carousel .carousel-prev {
+  left: calc(50% - 55px);
+  right: auto;
+}
+
+#prompt .portfolio-carousel .carousel-next {
+  left: calc(50% + 15px);
+  right: auto;
+}
+
+/* =====================================
+   DEN GODE PROMPT – LAYOUT
+===================================== */
+
+#prompt .case-content {
+  display: grid;
+  grid-template-columns: 35% 65%;
+  align-items: start;
+  gap: 0;
+}
+
+/* Tekst til venstre */
+#prompt .case-text {
+  grid-column: 1;
+  grid-row: 1;
+  padding-left: 0;
+  padding-right: 35px;
+}
+
+/* Karusel til højre */
+#prompt .portfolio-carousel {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+/* Tekstkolonne */
+#prompt .case-text {
+  width: 100%;
+  max-width: none;
+  padding-right: 35px;
+  box-sizing: border-box;
+}
+
+/* Karussel til højre */
+#prompt .portfolio-carousel {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  padding: 5px 5px 65px;
+  box-sizing: border-box;
+  overflow: hidden;
+  background-color: #FFBDE2;
+}
+
+/* Området med billeder */
+#prompt .carousel-track {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Skjul alle billeder */
+#prompt .carousel-track img {
+  display: none;
+  position: static;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transform: none;
+}
+
+/* Vis kun det aktive billede */
+#prompt .carousel-track img.active,
+#prompt .carousel-track img.is-active {
+  display: block;
+  opacity: 1;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  transform: none;
+}
+
+/* Skjul billederne på siderne */
+#prompt .carousel-track img.is-prev,
+#prompt .carousel-track img.is-next {
+  display: none;
+}
+
+/* Pile under billedet */
+#prompt .carousel-prev,
+#prompt .carousel-next {
+  position: absolute;
+  top: auto;
+  bottom: 20px;
+  transform: none;
+  color: #442F2A;
+  z-index: 10;
+  cursor: pointer;
+}
+
+#prompt .carousel-prev {
+  left: calc(50% - 65px);
+  right: auto;
+}
+
+#prompt .carousel-next {
+  left: calc(50% + 20px);
+  right: auto;
+}
+
+/* Mobil */
+@media (max-width: 768px) {
+  #prompt .case-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  #prompt .case-text {
+    padding-right: 0;
+  }
+
+  #prompt .portfolio-carousel {
+    height: 480px;
+    padding: 20px 15px 75px;
+  }
+}
+
+
+
+/* =====================================
+   DEN GODE PROMPT – ENDELIGT LAYOUT
+===================================== */
+
+/* Tekst til venstre, karusel til højre */
+#prompt .case-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 35fr) minmax(0, 65fr);
+  gap: 40px;
+  align-items: start;
+}
+
+/* Tekst i venstre kolonne */
+#prompt .case-grid .case-text {
+  grid-column: 1;
+  grid-row: 1;
+  order: 0;
+  width: 100%;
+  padding: 0;
+  align-self: start;
+}
+
+/* Karusel i højre kolonne */
+#prompt .case-grid .portfolio-carousel {
+  grid-column: 2;
+  grid-row: 1;
+  order: 0;
+  width: 100%;
+  min-width: 0;
+  align-self: start;
+}
+
+/* Mobil og tablet */
+@media (max-width: 900px) {
+  #prompt .case-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+  }
+
+  #prompt .case-grid .case-text {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  #prompt .case-grid .portfolio-carousel {
+    grid-column: 1;
+    grid-row: 2;
+  }
+}
+
+
+/* STORCENTER NORD – BYT SIDER */
+
+#storcenter .case-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* Tekst til venstre */
+#storcenter .case-text {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+/* Billeder til højre */
+#storcenter .case-media {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+/* Mobil */
+@media (max-width: 900px) {
+  #storcenter .case-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  #storcenter .case-text {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  #storcenter .case-media {
+    grid-column: 1;
+    grid-row: 2;
+  }
+}
+
+/* ELGIGANTEN – BYT SIDER */
+
+#elgiganten .case-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* Tekst til venstre */
+#elgiganten .case-text {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+/* Billeder til højre */
+#elgiganten .case-media {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+/* Mobil */
+@media (max-width: 900px) {
+  #elgiganten .case-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  #elgiganten .case-text {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  #elgiganten .case-media {
+    grid-column: 1;
+    grid-row: 2;
+  }
+}
+
+/* Gør luk-krydset tydeligt i popup */
+.project-popup .popup-close {
+  color: #EFE7DA;
+  font-size: 42px;
+  font-weight: 400;
+  z-index: 10;
+  cursor: pointer;
+}
+
+/* Når musen holdes over krydset */
+.project-popup .popup-close:hover {
+  color: #E497B5;
+}
+
+/* Gør luk-krydset tydeligt i popup */
+.project-popup .popup-close {
+  color: #EFE7DA;
+  font-size: 42px;
+  font-weight: 400;
+  z-index: 10;
+  cursor: pointer;
+}
+
+/* Når musen holdes over krydset */
+.project-popup .popup-close:hover {
+  color: #E497B5;
+}
+
+/* CHARACTER DESIGN – TEKST VENSTRE, BILLEDER HØJRE */
+
+#character .case-grid {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 60px;
+}
+
+#character .case-text {
+  order: 1;
+  flex: 1;
+}
+
+#character .case-media {
+  order: 2;
+  flex: 1;
+}
+
+/* Mobil */
+@media (max-width: 900px) {
+  #character .case-grid {
+    flex-direction: column;
+  }
+
+  #character .case-text,
+  #character .case-media {
+    width: 100%;
+  }
+}
+
+/* FJERN FARVEDE BOKSE OMKRING KARUSELLERNE */
+
+#tokyo .portfolio-carousel,
+#prompt .portfolio-carousel {
+  background-color: transparent;
+}

@@ -32,39 +32,42 @@ document.addEventListener("click", function (event) {
   }
 });
 
-// ==================================================
-// NAVBAR SKIFTER FARVE EFTER SEKTION
-// ==================================================
+/* =========================================
+   NAVBAR - FARVESKIFT VED SCROLL
+========================================= */
 
 const navbar = document.getElementById("navbar");
 
-const colorSections = document.querySelectorAll("[data-nav-color]");
+function updateNavbarColor() {
+  if (!navbar) return;
 
-if (navbar && colorSections.length > 0) {
-  const navObserver = new IntersectionObserver(
-    function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          const backgroundColor = entry.target.dataset.navColor;
-          const textColor = entry.target.dataset.navText;
+  const sections = document.querySelectorAll("[data-nav-color]");
+  const navbarHeight = navbar.offsetHeight;
 
-          navbar.style.backgroundColor = backgroundColor;
-          navbar.style.color = textColor;
-        }
-      });
-    },
+  let activeSection = null;
 
-    {
-      root: null,
-      threshold: 0,
-      rootMargin: "-70px 0px -85% 0px",
-    },
-  );
+  sections.forEach((section) => {
+    const rect = section.getBoundingClientRect();
 
-  colorSections.forEach(function (section) {
-    navObserver.observe(section);
+    if (rect.top <= navbarHeight + 5 && rect.bottom > navbarHeight + 5) {
+      activeSection = section;
+    }
   });
+
+  if (!activeSection) return;
+
+  navbar.style.backgroundColor = activeSection.dataset.navColor;
+  navbar.style.color = activeSection.dataset.navText;
 }
+
+window.addEventListener("scroll", updateNavbarColor, {
+  passive: true,
+});
+
+window.addEventListener("resize", updateNavbarColor);
+window.addEventListener("load", updateNavbarColor);
+
+updateNavbarColor();
 
 // ==================================================
 // POPUP DATA
@@ -337,4 +340,57 @@ document.addEventListener("keydown", function (event) {
       contactBox.classList.remove("show");
     }
   }
+});
+
+/* =========================================
+   KARUSELLER - TOKYO OG DEN GODE PROMPT
+========================================= */
+
+document.querySelectorAll(".portfolio-carousel").forEach((carousel) => {
+  const track = carousel.querySelector(".carousel-track");
+  const prev = carousel.querySelector(".carousel-prev");
+  const next = carousel.querySelector(".carousel-next");
+
+  if (!track || !prev || !next) return;
+
+  const images = [...track.querySelectorAll("img")];
+  if (images.length === 0) return;
+
+  let currentIndex = 0;
+
+  
+function showImage(index) {
+  currentIndex = (index + images.length) % images.length;
+
+  const prevIndex = (currentIndex - 1 + images.length) % images.length;
+
+  const nextIndex = (currentIndex + 1) % images.length;
+
+  images.forEach((image, i) => {
+    image.classList.remove("active", "is-active", "is-prev", "is-next");
+
+    if (i === currentIndex) {
+      image.classList.add("is-active");
+    } else if (i === prevIndex) {
+      image.classList.add("is-prev");
+    } else if (i === nextIndex) {
+      image.classList.add("is-next");
+    }
+  });
+}
+
+
+  prev.addEventListener("click", (event) => {
+    event.preventDefault();
+    showImage(currentIndex - 1);
+  });
+
+  next.addEventListener("click", (event) => {
+    event.preventDefault();
+    showImage(currentIndex + 1);
+  });
+
+  requestAnimationFrame(() => {
+    showImage(1);
+  });
 });
