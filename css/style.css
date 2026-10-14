@@ -1717,8 +1717,6 @@ button {
   transform: rotate(2deg);
 }
 
-
-
 /* =========================================
    PORTFOLIO - NY RÆKKEFØLGE
 ========================================= */
@@ -1728,28 +1726,48 @@ button {
   flex-direction: column;
 }
 
-.portfolio-new-hero { order: 0; }
-#tokyo { order: 1; }
-#prompt { order: 2; }
-#character { order: 3; }
-#elgiganten { order: 4; }
-#ovartaci { order: 5; }
-#kreakassen { order: 6; }
-#storcenter { order: 7; }
-#sustainable { order: 8; }
-#kasper { order: 9; }
+.portfolio-new-hero {
+  order: 0;
+}
+#tokyo {
+  order: 1;
+}
+#prompt {
+  order: 2;
+}
+#character {
+  order: 3;
+}
+#elgiganten {
+  order: 4;
+}
+#ovartaci {
+  order: 5;
+}
+#kreakassen {
+  order: 6;
+}
+#storcenter {
+  order: 7;
+}
+#sustainable {
+  order: 8;
+}
+#kasper {
+  order: 9;
+}
 
 /* =========================================
    TOKYO TAKEOVER
 ========================================= */
 
 .case-tokyo {
-  background-color: #D3E3E0;
-  color: #442F2A;
+  background-color: #d3e3e0;
+  color: #442f2a;
 }
 
 #tokyo .case-heading .handwritten {
-  color: #E497B5;
+  color: #e497b5;
   left: 67%;
   transform: rotate(-4deg);
 }
@@ -1759,16 +1777,16 @@ button {
 ========================================= */
 
 .case-prompt {
-  background-color: #E497B5;
-  color: #442F2A;
+  background-color: #e497b5;
+  color: #442f2a;
 }
 
 #prompt .case-heading h2 {
-  color: #EFE7DA;
+  color: #efe7da;
 }
 
 #prompt .case-heading .handwritten {
-  color: #442F2A;
+  color: #442f2a;
   right: 28%;
   transform: rotate(-6deg);
 }
@@ -1807,11 +1825,11 @@ button {
 }
 
 #tokyo .portfolio-carousel {
-  background-color: #C4DBD7;
+  background-color: #c4dbd7;
 }
 
 #prompt .portfolio-carousel {
-  background-color: #FFBDE2;
+  background-color: #ffbde2;
 }
 
 .carousel-track {
@@ -1847,7 +1865,7 @@ button {
 
   border: none;
   background: transparent;
-  color: #442F2A;
+  color: #442f2a;
 
   font-size: 42px;
   cursor: pointer;
@@ -1867,7 +1885,7 @@ button {
 }
 
 .carousel-arrow:focus-visible {
-  outline: 3px solid #442F2A;
+  outline: 3px solid #442f2a;
   outline-offset: 3px;
 }
 
@@ -1933,7 +1951,6 @@ button {
   }
 }
 
-
 /* =========================================
    RETTELSE AF NYE PORTFOLIO CASES
 ========================================= */
@@ -1995,7 +2012,7 @@ button {
 
   border: none;
   background: transparent;
-  color: #442F2A;
+  color: #442f2a;
 
   font-size: 40px;
   cursor: pointer;
@@ -2036,7 +2053,6 @@ button {
   }
 }
 
-
 /* =====================================
    TOKYO TAKEOVER - NYT KARUSEL DESIGN
 ===================================== */
@@ -2054,11 +2070,11 @@ button {
 
 /* Baggrundsfarver */
 #tokyo .portfolio-carousel {
-  background-color: #C4DBD7;
+  background-color: #c4dbd7;
 }
 
 #prompt .portfolio-carousel {
-  background-color: #FFBDE2;
+  background-color: #ffbde2;
 }
 
 /* Billedrækken */
@@ -2109,7 +2125,7 @@ button {
   z-index: 20;
   background: transparent;
   border: none;
-  color: #442F2A;
+  color: #442f2a;
   font-size: 42px;
   cursor: pointer;
 }
@@ -2312,9 +2328,8 @@ button {
 #tokyo .portfolio-carousel .carousel-next,
 #prompt .portfolio-carousel .carousel-prev,
 #prompt .portfolio-carousel .carousel-next {
-  color: #442F2A;
+  color: #442f2a;
 }
-
 
 /* =====================================
    DEN GODE PROMPT – KARUSEL
@@ -2389,7 +2404,7 @@ button {
   top: auto;
   bottom: 10px;
   transform: none;
-  color: #442F2A;
+  color: #442f2a;
   z-index: 10;
 }
 
@@ -2444,7 +2459,7 @@ button {
   padding: 5px 5px 65px;
   box-sizing: border-box;
   overflow: hidden;
-  background-color: #FFBDE2;
+  background-color: #ffbde2;
 }
 
 /* Området med billeder */
@@ -2497,7 +2512,7 @@ button {
   top: auto;
   bottom: 20px;
   transform: none;
-  color: #442F2A;
+  color: #442f2a;
   z-index: 10;
   cursor: pointer;
 }
@@ -2528,8 +2543,6 @@ button {
     padding: 20px 15px 75px;
   }
 }
-
-
 
 /* =====================================
    DEN GODE PROMPT – ENDELIGT LAYOUT
@@ -2580,7 +2593,6 @@ button {
     grid-row: 2;
   }
 }
-
 
 /* STORCENTER NORD – BYT SIDER */
 
@@ -2662,7 +2674,7 @@ button {
 
 /* Gør luk-krydset tydeligt i popup */
 .project-popup .popup-close {
-  color: #EFE7DA;
+  color: #efe7da;
   font-size: 42px;
   font-weight: 400;
   z-index: 10;
@@ -2671,12 +2683,12 @@ button {
 
 /* Når musen holdes over krydset */
 .project-popup .popup-close:hover {
-  color: #E497B5;
+  color: #e497b5;
 }
 
 /* Gør luk-krydset tydeligt i popup */
 .project-popup .popup-close {
-  color: #EFE7DA;
+  color: #efe7da;
   font-size: 42px;
   font-weight: 400;
   z-index: 10;
@@ -2685,7 +2697,7 @@ button {
 
 /* Når musen holdes over krydset */
 .project-popup .popup-close:hover {
-  color: #E497B5;
+  color: #e497b5;
 }
 
 /* CHARACTER DESIGN – TEKST VENSTRE, BILLEDER HØJRE */
